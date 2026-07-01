@@ -537,6 +537,7 @@
   <button onclick="goster('konu3')">3️⃣ Sübhâneke Duası</button>
   <button onclick="goster('degerlendirme')">✅ Değerlendirme</button>
   <button onclick="goster('arastirma')">📝 Araştırma Oyunları</button>
+  <button onclick="goster('konutekrari')">📝 Konu Tekrarı Testi</button>
 </div>
 
 <div class="oyun-grubu" id="kat-bulmaca">
@@ -705,6 +706,25 @@
       <li><b>Ramazan</b> — Oruç tutulan, Kur'an'ın indirilmeye başladığı mübarek ay.</li>
       <li><b>Bayram</b> — Dinimizde sevinç ve kardeşlik duygularıyla kutlanan özel günler (Ramazan ve Kurban Bayramı gibi).</li>
     </ul>
+  </div>
+</section>
+
+<!-- KONU TEKRARI TESTİ -->
+<section id="konutekrari">
+  <h2>📝 Konu Tekrarı Testi (50 Soru)</h2>
+  <div class="aciklama">4 şıklı, 50 sorudan oluşan kapsamlı bir tekrar testi! Kolay, orta ve zor sorular karışık geliyor. Cevabı seçince doğru/yanlış hemen görünüyor, altında da açıklaması çıkıyor.</div>
+  <div class="oyun-bilgi">
+    <span>🗂️ Soru: <b id="ktrTur">1</b>/<b id="ktrToplam">50</b></span>
+    <span>⭐ Puan: <b id="ktrPuan">0</b></span>
+    <span id="ktrZorluk"></span>
+  </div>
+  <div id="ktrSoru" class="balon-durum"></div>
+  <div id="ktrSecenekler" style="display:flex;flex-direction:column;gap:10px;max-width:560px;margin:0 auto;"></div>
+  <div class="aciklama" id="ktrAciklama" style="display:none;"></div>
+  <div class="sonuc-kutusu" id="ktrSonuc"></div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <button class="eylem" id="ktrSonrakiBtn" style="display:none;" onclick="ktrSonrakiSoru()">➡️ Sonraki Soru</button>
+    <button class="eylem" style="background:var(--sari)" onclick="ktrBaslat()">📝 Teste Başla</button>
   </div>
 </section>
 
@@ -2103,6 +2123,128 @@ const sorularG6 = [
 ];
 const g6Oyunu = zamanliQuizOlustur({sorular:sorularG6, konteynerId:'g6SoruAlani', canId:'g6Can', puanId:'g6Puan', sonucId:'g6Sonuc', sureSn:10, canBaslangic:3});
 function g6Baslat(){ g6Oyunu.baslat(); }
+
+// =====================================================================
+// KONU TEKRARI TESTİ (50 Soru)
+// =====================================================================
+const konuTekrariSorulari = [
+  {zorluk:"kolay", soru:"Bir işe veya yemeğe başlarken hangi ifade söylenir?", secenekler:["Elhamdülillah","Bismillah","Amin","Sübhanallah"], dogru:1, aciklama:"Besmele, bir işe başlarken söylenen sözdür; \"Bismillâhirrahmânirrahîm\" Allah'ın adıyla başlamak anlamına gelir."},
+  {zorluk:"kolay", soru:"Bir nimete/başarıya kavuşunca hangi ifade söylenir?", secenekler:["Estağfirullah","Elhamdülillah","İnşallah","Amin"], dogru:1, aciklama:"Hamd, Allah'ı övmek ve O'na şükretmek için söylenir."},
+  {zorluk:"kolay", soru:"Karşılaşınca söylenen esenlik dileği hangisidir?", secenekler:["Amin","Selamünaleyküm","Maşallah","İnşallah"], dogru:1, aciklama:"Selam, Müslümanların karşılaştıklarında birbirlerine söylediği esenlik dileğidir."},
+  {zorluk:"kolay", soru:"Allah'ın büyüklüğünü anmak için hangi ifade söylenir?", secenekler:["Elhamdülillah","Allahu Ekber","Sübhanallah","Estağfirullah"], dogru:1, aciklama:"Tekbir, \"Allahu Ekber\" (Allah en büyüktür) demektir."},
+  {zorluk:"kolay", soru:"Yanlışlıkla kötü bir söz söyleyince ne denir?", secenekler:["Elhamdülillah","Estağfirullah","Maşallah","Amin"], dogru:1, aciklama:"İstiğfar, Allah'tan af dilemek için söylenen \"Estağfirullah\" ifadesidir."},
+  {zorluk:"kolay", soru:"Allah'ı eksik sıfatlardan uzak tutarken ne denir?", secenekler:["Sübhanallah","Elhamdülillah","Allahu Ekber","İnşallah"], dogru:0, aciklama:"Tesbih, Allah'ı eksik sıfatlardan uzak tutmak için söylenen \"Sübhanallah\" ifadesidir."},
+  {zorluk:"kolay", soru:"Biri hasta olduğunda ne denir?", secenekler:["Allah'a emanet ol","Allah şifa versin","Hayırlı olsun","Amin"], dogru:1, aciklama:"\"Allah şifa versin\", hasta olan birine acil bir iyileşme dileğiyle söylenir."},
+  {zorluk:"kolay", soru:"Biri yolculuğa çıkarken ne denir?", secenekler:["Allah şifa versin","Allah'a emanet ol","Allah razı olsun","İnşallah"], dogru:1, aciklama:"\"Allah'a emanet ol\", yolculuğa çıkan birinin Allah'ın korumasında olmasını dilemek için söylenir."},
+  {zorluk:"kolay", soru:"Bir işin olmasını umduğumuzda ne denir?", secenekler:["Amin","İnşallah","Elhamdülillah","Maşallah"], dogru:1, aciklama:"\"İnşallah\", \"Allah izin verirse\" anlamına gelir."},
+  {zorluk:"kolay", soru:"Biri bize yardım ettiğinde ne denir?", secenekler:["Allah razı olsun","Allah şifa versin","Hayırlı olsun","Sübhanallah"], dogru:0, aciklama:"\"Allah razı olsun\", bize iyilik yapan birine teşekkür etmek için söylenir."},
+  {zorluk:"kolay", soru:"Bir dua bittiğinde hep birlikte ne denir?", secenekler:["İnşallah","Amin","Maşallah","Elhamdülillah"], dogru:1, aciklama:"\"Amin\", duanın kabul olması dileğiyle hep birlikte söylenir."},
+  {zorluk:"kolay", soru:"Sübhâneke duası ne zaman okunur?", secenekler:["Yemekten önce","Namaza başlarken","Uyumadan önce","Okula giderken"], dogru:1, aciklama:"Sübhâneke duası, namaza durup iftitah tekbiri aldıktan hemen sonra okunur."},
+  {zorluk:"kolay", soru:"Günde beş vakit kılınan ibadete ne denir?", secenekler:["Oruç","Namaz","Zekât","Hac"], dogru:1, aciklama:"Namaz, Müslümanların günde beş vakit kıldığı temel ibadettir."},
+  {zorluk:"kolay", soru:"İyi insanların gideceği güzel yere ne denir?", secenekler:["Cehennem","Cennet","Dünya","Ahiret"], dogru:1, aciklama:"Cennet, iyi insanların öldükten sonra gideceği güzel yerdir."},
+  {zorluk:"kolay", soru:"Allah'ın nurdan yarattığı, hep O'na itaat eden varlığa ne denir?", secenekler:["Peygamber","Melek","Cin","İnsan"], dogru:1, aciklama:"Melek, Allah'ın nurdan yarattığı, hiç günah işlemeyen varlıktır."},
+  {zorluk:"kolay", soru:"Allah'ın insanlara gönderdiği elçiye ne denir?", secenekler:["Melek","Peygamber","Halife","İmam"], dogru:1, aciklama:"Peygamber, Allah'ın insanlara doğru yolu göstermek için gönderdiği elçidir."},
+  {zorluk:"kolay", soru:"Dinimizin izin verdiği şeye ne denir?", secenekler:["Haram","Helal","Günah","Sevap"], dogru:1, aciklama:"Helal, dinimizin yapılmasına izin verdiği şeydir."},
+
+  {zorluk:"orta", soru:"Peygamberimizin adı anıldığında hangi ifade söylenir?", secenekler:["Tekbir","Salavat","Tesbih","İstiğfar"], dogru:1, aciklama:"Salavat, Peygamberimize dua ve saygı sunmaktır."},
+  {zorluk:"orta", soru:"\"Allahümme salli alâ Muhammed\" ifadesi hangi kavrama örnektir?", secenekler:["Tekbir","Hamd","Salavat","Şükür"], dogru:2, aciklama:"Bu ifade, Peygamberimize salavat getirmenin bir örneğidir."},
+  {zorluk:"orta", soru:"Kur'an okumaya başlarken hangi ifade söylenir?", secenekler:["Bismillah","Eûzü billâhi mine'ş-şeytâni'r-racîm","Elhamdülillah","Amin"], dogru:1, aciklama:"Kur'an okumaya başlarken \"Eûzü billâhi mine'ş-şeytâni'r-racîm\" (kovulmuş şeytanın şerrinden Allah'a sığınırım) denir."},
+  {zorluk:"orta", soru:"Biri hapşırıp \"Elhamdülillah\" deyince ona ne denir?", secenekler:["Amin","Yerhamükallah","Maşallah","Sübhanallah"], dogru:1, aciklama:"\"Yerhamükallah\" (Allah sana merhamet etsin), hapşıran kişiye söylenen karşılıktır."},
+  {zorluk:"orta", soru:"Yeni bir eve taşınan birine ne denir?", secenekler:["Allah razı olsun","Hayırlı olsun","Allah kolaylık versin","Amin"], dogru:1, aciklama:"\"Hayırlı olsun\", yeni bir eve/işe/eşyaya kavuşan birine söylenir."},
+  {zorluk:"orta", soru:"Zor bir işe girişen birine ne denir?", secenekler:["Allah şifa versin","Allah kolaylık versin","Hayırlı olsun","İnşallah"], dogru:1, aciklama:"\"Allah kolaylık versin\", zor bir işe başlayan birine güç dilemek için söylenir."},
+  {zorluk:"orta", soru:"Kaybettiğimiz bir yakınımız için ne denir?", secenekler:["Allah rahmet eylesin","Allah şifa versin","Hayırlı olsun","Amin"], dogru:0, aciklama:"\"Allah rahmet eylesin\", vefat etmiş bir kimse anıldığında söylenir."},
+  {zorluk:"orta", soru:"Sübhâneke duasının \"ve tebârekesmük\" bölümü ne anlama gelir?", secenekler:["Senden başka ilah yoktur","Senin adın mübarektir","Varlığın her şeyden üstündür","Seni överim"], dogru:1, aciklama:"\"Ve tebârekesmük\", \"Senin adın mübarektir\" anlamına gelir."},
+  {zorluk:"orta", soru:"Sübhâneke duasının \"ve lâ ilâhe ğayrük\" bölümü ne anlama gelir?", secenekler:["Senin adın mübarektir","Senden başka ilah yoktur","Varlığın üstündür","Seni överim"], dogru:1, aciklama:"\"Ve lâ ilâhe ğayrük\", \"Senden başka ilah yoktur\" anlamına gelir."},
+  {zorluk:"orta", soru:"Zengin Müslümanların fakirlere verdiği mal yardımına ne denir?", secenekler:["Sadaka","Zekât","Fidye","Kurban"], dogru:1, aciklama:"Zekât, dinen zengin sayılan Müslümanların malının belli bir kısmını ihtiyaç sahiplerine vermesidir."},
+  {zorluk:"orta", soru:"Sabahtan akşama yeme-içmeden uzak durma ibadetine ne denir?", secenekler:["Namaz","Oruç","Zekât","Hac"], dogru:1, aciklama:"Oruç, imsak vaktinden iftara kadar yeme-içmeden uzak durma ibadetidir."},
+  {zorluk:"orta", soru:"Allah rızası için kesilen hayvana ne denir?", secenekler:["Sadaka","Kurban","Zekât","Fidye"], dogru:1, aciklama:"Kurban, Allah'ın rızasını kazanmak amacıyla belirli şartlarda kesilen hayvandır."},
+  {zorluk:"orta", soru:"Müslümanların Mekke'ye yaptığı ibadet yolculuğuna ne denir?", secenekler:["Namaz","Oruç","Hac","Umre"], dogru:2, aciklama:"Hac, imkânı olan Müslümanların ömürlerinde bir kez Mekke'yi ziyaret etmesidir."},
+  {zorluk:"orta", soru:"Namaz vaktini bildiren çağrıya ne denir?", secenekler:["Kamet","Ezan","Hutbe","Tekbir"], dogru:1, aciklama:"Ezan, namaz vaktinin geldiğini bildiren çağrıdır."},
+  {zorluk:"orta", soru:"Allah'a kulluk etmek için yapılan davranışlara ne denir?", secenekler:["Sevap","İbadet","Nimet","Şükür"], dogru:1, aciklama:"İbadet, Allah'a olan sevgi ve bağlılığımızı göstermek için yaptığımız davranışların tümüdür."},
+  {zorluk:"orta", soru:"Allah'ın peygamberlere gönderdiği bilgiye ne denir?", secenekler:["İlham","Vahiy","Rüya","Keramet"], dogru:1, aciklama:"Vahiy, Allah'ın peygamberlerine gönderdiği bilgi ve mesajdır."},
+  {zorluk:"orta", soru:"Oruç tutulan mübarek aya ne denir?", secenekler:["Şevval","Ramazan","Muharrem","Recep"], dogru:1, aciklama:"Ramazan, oruç tutulan ve Kur'an'ın indirilmeye başladığı mübarek aydır."},
+
+  {zorluk:"zor", soru:"\"Dinî ifadeler\" kavramı ne anlama gelir?", secenekler:["Sadece Arapça sözler","Dinimizin etkisiyle dilimize yerleşen söz ve kavramlar","Sadece dua cümleleri","Kur'an ayetleri"], dogru:1, aciklama:"Dinî ifadeler, dinimizin etkisiyle günlük dilimize yerleşen söz ve kavramlardır."},
+  {zorluk:"zor", soru:"Aşağıdakilerden hangisi \"hamd\" ile \"şükür\" arasındaki farkı en iyi açıklar?", secenekler:["İkisi aynı anlama gelir","Hamd övmek, şükür teşekkür etmektir","Hamd yalnızca yemekte söylenir","Şükür yalnızca duada söylenir"], dogru:1, aciklama:"Hamd, Allah'ı övmek; şükür ise nimetlere karşı teşekkür etmektir. Yakın ama farklı kavramlardır."},
+  {zorluk:"zor", soru:"Sübhâneke duası namazın hangi bölümünde okunur?", secenekler:["Secdede","İftitah tekbirinden hemen sonra","Rükûda","Selam verirken"], dogru:1, aciklama:"Sübhâneke duası, namaza durup iftitah tekbiri aldıktan hemen sonra okunur."},
+  {zorluk:"zor", soru:"\"İnnâ lillâhi ve innâ ileyhi râciûn\" ifadesi hangi durumda söylenir?", secenekler:["Sevinçli bir haberde","Bir kayıp/musibet karşısında","Yemeğe başlarken","Selamlaşırken"], dogru:1, aciklama:"Bu ifade, bir kayıp veya musibet karşısında sabırla söylenen bir dinî ifadedir."},
+  {zorluk:"zor", soru:"Allah'ın verdiği güzellik ve iyiliğe ne denir?", secenekler:["Sevap","Nimet","Rahmet","Lütuf"], dogru:1, aciklama:"Nimet, Allah'ın kullarına verdiği güzellik ve iyiliktir."},
+  {zorluk:"zor", soru:"Allah'ın merhameti ve acımasına ne denir?", secenekler:["Nimet","Rahmet","Lütuf","Sevap"], dogru:1, aciklama:"Rahmet, Allah'ın kullarına olan sonsuz merhameti ve acımasıdır."},
+  {zorluk:"zor", soru:"Allah'ın hak etmediğimiz hâlde bize bahşettiği iyiliğe ne denir?", secenekler:["Nimet","Rahmet","Lütuf","Sevap"], dogru:2, aciklama:"Lütuf, Allah'ın bize bahşettiği bir iyilik ve ihsandır."},
+  {zorluk:"zor", soru:"İyilik yapınca kazanılan mükâfata ne denir?", secenekler:["Sevap","Günah","Nimet","Rahmet"], dogru:0, aciklama:"Sevap, iyi bir davranışın Allah katındaki karşılığı, mükâfatıdır."},
+  {zorluk:"zor", soru:"Allah'ın hoş görmediği, yasakladığı davranışa ne denir?", secenekler:["Haram","Günah","Helal","Sevap"], dogru:1, aciklama:"Günah, Allah'ın hoş görmediği, yasakladığı kötü davranıştır."},
+  {zorluk:"zor", soru:"Kötülük yapıp tövbe etmeyenlerin gideceği söylenen yere ne denir?", secenekler:["Cennet","Cehennem","Ahiret","Berzah"], dogru:1, aciklama:"Cehennem, kötülük yapanların gideceği söylenen, azap dolu yerdir."},
+  {zorluk:"zor", soru:"Dinî açıdan kutlanan özel günlere ne denir?", secenekler:["Cuma","Bayram","Kandil","Mevlit"], dogru:1, aciklama:"Bayram, dinimizde sevinç ve kardeşlik duygularıyla kutlanan özel günlerdir."},
+  {zorluk:"zor", soru:"\"Selamünaleyküm\" ifadesinin karşılığı olarak ne söylenir?", secenekler:["Amin","Ve aleykümselam","Elhamdülillah","Hoş geldiniz"], dogru:1, aciklama:"Selama karşılık \"Ve aleykümselam\" (Senin üzerine de selam olsun) denir."},
+  {zorluk:"zor", soru:"\"Tesbih\" kavramı hangi anlama en yakındır?", secenekler:["Allah'ı övmek","Allah'ı eksik sıfatlardan uzak tutmak","Allah'tan af dilemek","Allah'a şükretmek"], dogru:1, aciklama:"Tesbih, Allah'ı eksik sıfatlardan uzak tutmak, O'nun yüceliğini dile getirmektir."},
+  {zorluk:"zor", soru:"Peygamberimize dua ve saygı sunmaya ne denir?", secenekler:["Tekbir","Tesbih","Salavat","İstiğfar"], dogru:2, aciklama:"Salavat, Peygamberimize dua ve saygı sunmaktır."},
+  {zorluk:"zor", soru:"Sübhâneke duasının kelime kelime anlamı kaç bölümden oluşur?", secenekler:["2","3","4","5"], dogru:2, aciklama:"Sübhâneke duası; \"Sübhânekellâhümme ve bi hamdik\", \"ve tebârekesmük\", \"ve teâlâ ceddük\", \"ve lâ ilâhe ğayrük\" olmak üzere 4 bölümden oluşur."},
+  {zorluk:"zor", soru:"Aşağıdakilerden hangisi bir \"dilek/dua ifadesi\" değil, bir \"günlük konuşma ifadesi\"dir?", secenekler:["Amin","İnşallah","Bismillah","Allah'a emanet ol"], dogru:2, aciklama:"Bismillah (Besmele), bir işe başlarken söylenen günlük konuşma ifadesidir; diğerleri dilek/dua ifadeleridir."},
+];
+let ktrIndex = 0, ktrPuan = 0, ktrSiraliSorular = [], ktrKilit = false;
+
+function ktrBaslat(){
+  ktrSiraliSorular = karistir(konuTekrariSorulari.slice());
+  ktrIndex = 0; ktrPuan = 0;
+  document.getElementById('ktrPuan').textContent = 0;
+  document.getElementById('ktrToplam').textContent = ktrSiraliSorular.length;
+  document.getElementById('ktrSonuc').textContent = '';
+  document.getElementById('ktrSonrakiBtn').style.display = 'none';
+  ktrSoruGoster();
+}
+
+function ktrSoruGoster(){
+  if(ktrIndex >= ktrSiraliSorular.length){
+    document.getElementById('ktrSoru').textContent = '';
+    document.getElementById('ktrSecenekler').innerHTML = '';
+    document.getElementById('ktrAciklama').style.display = 'none';
+    document.getElementById('ktrZorluk').textContent = '';
+    document.getElementById('ktrSonrakiBtn').style.display = 'none';
+    const yuzde = Math.round((ktrPuan/ktrSiraliSorular.length)*100);
+    document.getElementById('ktrSonuc').textContent = `🎉 Test bitti! ${ktrPuan}/${ktrSiraliSorular.length} doğru (%${yuzde})`;
+    return;
+  }
+  ktrKilit = false;
+  document.getElementById('ktrTur').textContent = ktrIndex+1;
+  const oge = ktrSiraliSorular[ktrIndex];
+  const zorlukEtiket = oge.zorluk==='kolay' ? '🟢 Kolay' : oge.zorluk==='orta' ? '🟡 Orta' : '🔴 Zor';
+  document.getElementById('ktrZorluk').textContent = zorlukEtiket;
+  document.getElementById('ktrSoru').textContent = oge.soru;
+  document.getElementById('ktrAciklama').style.display = 'none';
+  document.getElementById('ktrAciklama').textContent = '';
+  document.getElementById('ktrSonrakiBtn').style.display = 'none';
+  document.getElementById('ktrSonuc').textContent = '';
+  const kutu = document.getElementById('ktrSecenekler');
+  kutu.innerHTML = '';
+  oge.secenekler.forEach((sec,i)=>{
+    const btn = document.createElement('div');
+    btn.className = 'merdiven-secenek';
+    btn.textContent = sec;
+    btn.onclick = ()=>{
+      if(ktrKilit) return;
+      ktrKilit = true;
+      const tumBtn = kutu.querySelectorAll('.merdiven-secenek');
+      if(i===oge.dogru){
+        btn.classList.add('dogru');
+        ktrPuan++;
+        document.getElementById('ktrPuan').textContent = ktrPuan;
+      } else {
+        btn.classList.add('yanlis');
+        tumBtn[oge.dogru].classList.add('dogru');
+      }
+      const aciklamaKutu = document.getElementById('ktrAciklama');
+      aciklamaKutu.style.display = 'block';
+      aciklamaKutu.innerHTML = `💡 <b>Açıklama:</b> ${oge.aciklama}`;
+      document.getElementById('ktrSonrakiBtn').style.display = 'block';
+    };
+    kutu.appendChild(btn);
+  });
+}
+
+function ktrSonrakiSoru(){
+  ktrIndex++;
+  ktrSoruGoster();
+}
 
 // =====================================================================
 // KONU 1 EK OYUNU — Sürükle-Bırak Kategori Oyunu
