@@ -280,6 +280,85 @@
     background:var(--mavi); color:white; cursor:pointer; font-weight:bold;
   }
   .labirent-tus:hover{ background:#1c4e6b; }
+
+/* ===================== SUNUM (SLAYT) GORUNUMU ===================== */
+.sunum-sarmal{ max-width:900px; margin:0 auto; }
+.sunum-ust{ display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.sunum-sayac{ font-weight:bold; color:var(--mavi); background:var(--acikgri); padding:6px 14px; border-radius:16px; font-size:.9em; }
+.sunum-tamekran-btn{ background:var(--navy); color:#fff; border:none; padding:8px 16px; border-radius:16px; cursor:pointer; font-weight:bold; font-size:.9em; }
+.sunum-tamekran-btn:hover{ background:var(--mavi); }
+.sunum-alan{
+  position:relative; width:100%; aspect-ratio:16/9; background:#0d1f2d;
+  border-radius:14px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,.25);
+}
+.sunum-alan:fullscreen{ border-radius:0; aspect-ratio:auto; display:flex; align-items:center; justify-content:center; }
+.sunum-alan:fullscreen .sunum-slayt{ max-width:1400px; max-height:90vh; margin:auto; }
+.sunum-slayt{
+  position:absolute; inset:0; display:none; flex-direction:column; align-items:center; justify-content:center;
+  padding:6% 8%; text-align:center; color:#fff; font-family:"Nunito","Segoe UI",sans-serif;
+  animation:sunumFade .35s ease;
+}
+.sunum-slayt.aktif{ display:flex; }
+@keyframes sunumFade{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+
+.s-baslik, .s-kapanis{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sb-daire{
+  width:90px; height:90px; border-radius:50%; background:var(--sari); color:#1E3A8A;
+  display:flex; align-items:center; justify-content:center; font-size:2.6em; margin-bottom:16px;
+  box-shadow:0 0 0 4px #fff3;
+}
+.sb-ust{ letter-spacing:2px; color:var(--sari); font-weight:bold; font-size:.95em; margin:0 0 8px; }
+.sb-baslik{ font-size:1.7em; margin:0 0 14px; }
+.sb-ders{ color:#cbd5e1; margin:2px 0; }
+.sb-ogretmen{ color:#94a3b8; font-style:italic; font-size:.9em; margin:2px 0; }
+
+.s-liste{ background:var(--acik); color:#22333b; }
+.s-liste h3{ color:var(--mavi); font-size:1.3em; margin-top:0; }
+.sl-liste{ text-align:left; list-style:none; padding:0; margin:0; width:100%; max-width:640px; }
+.sl-liste li{
+  background:#fff; border-left:6px solid var(--mavi); border-radius:8px; padding:10px 16px;
+  margin-bottom:10px; font-size:.95em; box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.s-ozet .sl-liste li{ border-left-color:var(--yesil); }
+
+.s-icerik{ background:#fff; color:#22333b; }
+.s-icerik h3{ color:var(--vurgu, var(--mavi)); font-size:1.25em; margin-top:0; }
+.si-liste{ text-align:left; list-style:none; padding:0; margin:0; width:100%; max-width:640px; }
+.si-liste li{
+  background:var(--acikgri); border-left:6px solid var(--vurgu, var(--mavi)); border-radius:8px;
+  padding:10px 16px; margin-bottom:10px; font-size:.92em; line-height:1.4;
+}
+
+.s-kavram{ background:var(--acikgri); color:#22333b; }
+.s-kavram h3{ color:var(--mavi); margin-top:0; }
+.sk-izgara{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; max-width:700px; }
+.sk-etiket{ color:#fff; font-weight:bold; padding:10px 18px; border-radius:20px; font-size:.9em; box-shadow:0 2px 6px rgba(0,0,0,.15); }
+
+.s-ayet{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sa-ust{ color:var(--sari); font-weight:bold; letter-spacing:2px; font-size:.9em; }
+.sa-meal{ font-size:1.25em; font-style:italic; max-width:640px; line-height:1.5; margin:14px 0; font-family:Georgia,serif; }
+.sa-kaynak{ color:var(--sari); font-weight:bold; }
+
+.s-video{ background:linear-gradient(160deg,#1E3A8A,#0d1f2d); }
+.sv-ust{ color:#8FD9B8; font-weight:bold; letter-spacing:2px; font-size:.9em; margin-bottom:10px; }
+.sv-cerceve{ width:100%; max-width:640px; aspect-ratio:16/9; border-radius:10px; overflow:hidden; border:2px solid var(--sari); box-shadow:0 4px 18px rgba(0,0,0,.4); }
+.sv-cerceve iframe{ width:100%; height:100%; border:none; }
+.sv-baslik{ margin-top:10px; font-size:.95em; color:#e5e7eb; }
+
+.sunum-nav{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; gap:10px; }
+.sunum-nav button{
+  background:var(--mavi); color:#fff; border:none; padding:10px 20px; border-radius:20px;
+  cursor:pointer; font-weight:bold; font-size:.95em;
+}
+.sunum-nav button:hover{ background:var(--yesil); }
+.sunum-nav button:disabled{ opacity:.4; cursor:default; }
+.sunum-noktalar{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; max-width:400px; }
+.sunum-nokta{ width:9px; height:9px; border-radius:50%; background:#cbd5e1; cursor:pointer; }
+.sunum-nokta.aktif{ background:var(--mavi); }
+@media(max-width:640px){
+  .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
+}
+
 </style>
 </head>
 <body>
@@ -322,12 +401,12 @@
   <button onclick="kategoriGoster('kat-yarisma5')">🎮 Yarışma Oyunları</button>
   <button onclick="kategoriGoster('kat-mantik5')">🕵️ Mantık &amp; Dedektiflik</button>
   <button onclick="kategoriGoster('kat-macera5')">🌀 Macera</button>
-  <a href="slayt5.pptx" download class="slayt-link">📊 Ders Slaydı</a>
 </nav>
 
 <div class="oyun-grubu aktif" id="kat-unite5">
   <button onclick="goster('ozet5')" class="aktif">🧼 Konu Özeti</button>
   <button onclick="goster('konutekrari5')">📝 Konu Tekrarı Testi</button>
+  <button onclick="goster('slayt')">🖥️ Ünite Sunumu</button>
 </div>
 
 <div class="oyun-grubu" id="kat-bulmaca5">
@@ -363,6 +442,157 @@
 </div>
 
 <main>
+<section id="slayt">
+<h2>🖥️ Ünite Sunumu</h2>
+
+  <div class="sunum-sarmal">
+    <div class="sunum-ust">
+      <span class="sunum-sayac" id="sunumSayac">1 / 19</span>
+      <button class="sunum-tamekran-btn" onclick="sunumTamEkran('')">⛶ Tam Ekran</button>
+    </div>
+    <div class="sunum-alan" id="sunumAlan">
+      
+  <div class="sunum-slayt aktif s-baslik" data-tip="baslik">
+    <div class="sb-daire">💧</div>
+    <p class="sb-ust">4. SINIF — 5. ÜNİTE</p>
+    <h2 class="sb-baslik">İslam Dini ve Temizlik</h2>
+    <p class="sb-ders">Din Kültürü ve Ahlak Bilgisi</p>
+    <p class="sb-ogretmen">Ayşe Yazıcı</p>
+  </div>
+
+  <div class="sunum-slayt s-liste" data-tip="hedef">
+    <h3>🎯 Bu Ünitede Neler Öğreneceğiz?</h3>
+    <ul class="sl-liste">
+      <li>İslam Dini ve Temizlik</li><li>Bedenimi ve Giysilerimi Temiz Tutarım</li><li>Evimi ve Okulumu Temiz Tutarım</li><li>Çevremi Temiz Tutarım</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
+    <h3>📌 İslam Dini ve Temizlik (1/3)</h3>
+    <ul class="si-liste">
+      <li>Temizlik, insanın görünen ve görünmeyen her türlü kirden arınmasıdır.</li><li>Temizlik ikiye ayrılır: Maddi temizlik (bedenin, elbiselerin, çevrenin temiz tutulması) ve manevi temizlik (insanın iç dünyasının, kalbinin temiz olması; güzel ahlaklı olması).</li><li>Manevi temizliğe kültürümüzde iç temizliği ve kalp temizliği de denir.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
+    <h3>📌 İslam Dini ve Temizlik (2/3)</h3>
+    <ul class="si-liste">
+      <li>İslam kültüründe temizlik yerine zaman zaman taharet kavramı kullanılır.</li><li>Allah (cc) temiz olanları sever: "...Allah tertemiz olanları sever." (Tevbe suresi, 108. ayet.) Peygamberimiz (sav): "Allah güzeldir, güzelliği sever; temizdir, temizliği sever..." (Tirmizi, Edeb, 41.) — "...Temizlik…</li><li>Namaz kılacak Müslüman öncelikle abdest almalıdır.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
+    <h3>📌 İslam Dini ve Temizlik (3/3)</h3>
+    <ul class="si-liste">
+      <li>Peygamberimiz (sav): "Cennetin anahtarı namaz, namazın anahtarı da abdesttir." (Tirmizi, Taharet, 1.) Kâbe'yi ziyaret edecek kişilerin de abdestli olması gerekir.</li><li>Abdest alma sırası: Niyet edilip Eûzü-besmele çekilir → Eller yıkanır → Ağız çalkalanır → Burun temizlenir → Yüz yıkanır → Sağ, sonra sol kol dirseklerle yıkanır → Baş ıslak elle mesh edilir → Kulakların içi…</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
+    <h3>📌 Bedenimi ve Giysilerimi Temiz Tutarım (1/2)</h3>
+    <ul class="si-liste">
+      <li>Beden temizliği; ellerin, yüzün, ağzın, burnun, ayakların, tırnakların, saçın, kısacası bedenin tamamının temiz olmasıdır.</li><li>Eller en fazla kirlenen organımızdır; yemeklerden önce-sonra ve tuvaletten çıkınca yıkanmalıdır.</li><li>Ağız ve diş sağlığı önemlidir. Hz. Peygamber (sav), dişlerini misvak denilen bir tür ağaç fırçasıyla temizlerdi. "Misvak kullanın...</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
+    <h3>📌 Bedenimi ve Giysilerimi Temiz Tutarım (2/2)</h3>
+    <ul class="si-liste">
+      <li>Cebrail bana diş temizliğini o kadar çok tavsiye etti ki bana ve ümmetime bunun farz olacağından korktum." (İbni Mace, Taharet, 7.)</li><li>Saç ve tırnak temizliğine önem verilmelidir.</li><li>Elbise temizliği de beden temizliğinin bir parçasıdır: "Elbiseni tertemiz tut." (Müddessir suresi, 4. ayet.) "İnsanlar kıyafetlerine göre karşılanır, düşüncelerine göre uğurlanır." sözü, temiz giyinmenin önemine işaret…</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
+    <h3>📌 Evimi ve Okulumu Temiz Tutarım (1/2)</h3>
+    <ul class="si-liste">
+      <li>Temiz ve düzenli bir evde yaşamak insana huzur verir.</li><li>Odamızı düzenli kullanmalı, yatağımızı toplamalı, eşyalarımızı yerli yerine koymalıyız.</li><li>Tuvalet, mutfak, salon gibi ortak alanların temizliğinde de sorumluluk almalıyız.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
+    <h3>📌 Evimi ve Okulumu Temiz Tutarım (2/2)</h3>
+    <ul class="si-liste">
+      <li>Okulumuzun temiz ve düzenli olması sağlığımız ve eğitimimiz açısından önemlidir.</li><li>Okulu kirletmenin, başkalarının hakkını çiğnemek yani kul hakkı yemek anlamına geldiğini unutmamalıyız.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
+    <h3>📌 Çevremi Temiz Tutarım (1/3)</h3>
+    <ul class="si-liste">
+      <li>Çevre, içinde yaşadığımız, bizi her an etkisi altında bulunduran ortamdır (hava, su, toprak, bitkiler, hayvanlar).</li><li>Her yıl 743 milyon ton verimli üst toprağımız erozyonla kayboluyor; dünya genelinde her yıl İsviçre'nin 3 katı büyüklüğünde alan çölleşmeyle yok oluyor.</li><li>Allah (cc) her şeyi bir ölçü ve dengede yaratmıştır: "Gerçekten biz, her şeyi bir ölçü ve dengede yarattık." (Kamer suresi, 49. ayet.) "Göğü Allah yükseltti ve mizanı (dengeyi) O koydu.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
+    <h3>📌 Çevremi Temiz Tutarım (2/3)</h3>
+    <ul class="si-liste">
+      <li>Sakın dengeyi bozmayın." (Rahman suresi, 7-8. ayetler.)</li><li>Çevreyi oluşturan unsurlar insana Allah'ın emanetidir. "İnsanların bizzat kendi işledikleri yüzünden karada ve denizde düzen bozuldu..." (Rum suresi, 41. ayet.)</li><li>Peygamberimiz (sav) ağaç dikmeyi teşvik etmiştir: "Bir Müslüman bir ağaç diker veya ekin eker de ondan bir kuş, insan veya herhangi bir hayvan yerse bu, onun için sadaka sayılır." (Buhari, Edeb, 27.) "Birinizin elinde…</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
+    <h3>📌 Çevremi Temiz Tutarım (3/3)</h3>
+    <ul class="si-liste">
+      <li>Çöpleri çöp kutusuna atmalı, geri dönüştürülebilir atıkları geri dönüşüm kutularına ayırmalı, ormanları ve ağaçları korumalıyız.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-kavram" data-tip="kavram">
+    <h3>🔑 Önemli Kavramlar (1/2)</h3>
+    <div class="sk-izgara">
+      <span class="sk-etiket" style="background:var(--yesil)">Maddi temizlik</span><span class="sk-etiket" style="background:var(--mavi)">manevi temizlik</span><span class="sk-etiket" style="background:var(--kirmizi)">iç temizliği</span><span class="sk-etiket" style="background:var(--turkuaz)">kalp temizliği</span><span class="sk-etiket" style="background:#7c3aed">taharet</span><span class="sk-etiket" style="background:var(--yesil)">abdest</span><span class="sk-etiket" style="background:var(--mavi)">Abdest alma sırası:</span><span class="sk-etiket" style="background:var(--kirmizi)">misvak</span><span class="sk-etiket" style="background:var(--turkuaz)">huzur</span><span class="sk-etiket" style="background:#7c3aed">kul hakkı</span>
+    </div>
+  </div>
+
+  <div class="sunum-slayt s-kavram" data-tip="kavram">
+    <h3>🔑 Önemli Kavramlar (2/2)</h3>
+    <div class="sk-izgara">
+      <span class="sk-etiket" style="background:var(--yesil)">Çevre</span><span class="sk-etiket" style="background:var(--mavi)">erozyon</span><span class="sk-etiket" style="background:var(--kirmizi)">3 katı</span><span class="sk-etiket" style="background:var(--turkuaz)">emanetidir</span><span class="sk-etiket" style="background:#7c3aed">sadaka</span><span class="sk-etiket" style="background:var(--yesil)">geri dönüşüm</span>
+    </div>
+  </div>
+
+  <div class="sunum-slayt s-ayet" data-tip="ayet">
+    <p class="sa-ust">📖 AYETLERLE DÜŞÜNELİM</p>
+    <p class="sa-meal">"Allah tertemiz olanları sever."</p>
+    <p class="sa-kaynak">— Tevbe suresi, 108. ayet</p>
+  </div>
+
+  <div class="sunum-slayt s-ayet" data-tip="ayet">
+    <p class="sa-ust">📖 AYETLERLE DÜŞÜNELİM</p>
+    <p class="sa-meal">"Elbiseni tertemiz tut."</p>
+    <p class="sa-kaynak">— Müddessir suresi, 4. ayet</p>
+  </div>
+
+  <div class="sunum-slayt s-video" data-tip="video">
+    <p class="sv-ust">🎬 KONUYLA İLGİLİ VİDEO</p>
+    <div class="sv-cerceve">
+      <iframe src="https://www.youtube.com/embed/zgPCFMYkwc8" title="Temizlik İmandan Gelir - Nussa ve Rarra" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="sv-baslik">Temizlik İmandan Gelir - Nussa ve Rarra</p>
+  </div>
+
+  <div class="sunum-slayt s-liste s-ozet" data-tip="ozet">
+    <h3>📝 Ünite Özeti</h3>
+    <ul class="sl-liste">
+      <li>Hadis-i Şerif: "Mümin, kendisiyle hoş geçinilen kimsedir.</li><li>Kendisiyle hoş geçinilmeyen, başkalarıyla geçinemeyen kimsede hayır yoktur." (Ahmed bin Hanbel, el-Müsned, C 2, s.</li>
+    </ul>
+  </div>
+
+  <div class="sunum-slayt s-kapanis" data-tip="kapanis">
+    <div class="sb-daire">🌟</div>
+    <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
+    <p class="sb-ders">Başarılar dilerim.</p>
+    <p class="sb-ogretmen">Ayşe Yazıcı — Din Kültürü ve Ahlak Bilgisi Öğretmeni</p>
+  </div>
+    </div>
+    <div class="sunum-nav">
+      <button onclick="sunumGit('',-1)">⬅ Önceki</button>
+      <div class="sunum-noktalar" id="sunumNoktalar"></div>
+      <button onclick="sunumGit('',1)">Sonraki ➡</button>
+    </div>
+  </div>
+</section>
+
 
 <!-- KONU ÖZETİ -->
 <section id="ozet5" class="aktif">
@@ -2661,6 +2891,59 @@ ks5Olustur();
 nonogram5Olustur();
 istatistikleriGuncelleGoster();
 sonucIzlemeBaslat();
+
+// ===================== SUNUM (SLAYT) GORUNUMU JS =====================
+window.sunumDurumu = window.sunumDurumu || {};
+function sunumNoktalariOlustur(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  const nokta = document.getElementById('sunumNoktalar'+suf);
+  if(!alan || !nokta) return;
+  const toplam = alan.querySelectorAll('.sunum-slayt').length;
+  nokta.innerHTML = '';
+  for(let i=0;i<toplam;i++){
+    const d = document.createElement('span');
+    d.className = 'sunum-nokta' + (i===0?' aktif':'');
+    d.onclick = function(){ sunumIndexeGit(suf, i); };
+    nokta.appendChild(d);
+  }
+}
+function sunumGuncelle(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  const slaytlar = alan.querySelectorAll('.sunum-slayt');
+  const idx = sunumDurumu[suf] || 0;
+  slaytlar.forEach(function(s,i){ s.classList.toggle('aktif', i===idx); });
+  const sayac = document.getElementById('sunumSayac'+suf);
+  if(sayac) sayac.textContent = (idx+1)+' / '+slaytlar.length;
+  document.querySelectorAll('#sunumNoktalar'+suf+' .sunum-nokta').forEach(function(n,i){ n.classList.toggle('aktif', i===idx); });
+}
+function sunumIndexeGit(suf, i){
+  sunumDurumu[suf] = i;
+  sunumGuncelle(suf);
+}
+function sunumGit(suf, yon){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  const toplam = alan.querySelectorAll('.sunum-slayt').length;
+  let idx = (sunumDurumu[suf]||0) + yon;
+  if(idx<0) idx=0;
+  if(idx>=toplam) idx=toplam-1;
+  sunumIndexeGit(suf, idx);
+}
+function sunumTamEkran(suf){
+  const alan = document.getElementById('sunumAlan'+suf);
+  if(!alan) return;
+  if(alan.requestFullscreen) alan.requestFullscreen();
+  else if(alan.webkitRequestFullscreen) alan.webkitRequestFullscreen();
+}
+document.addEventListener('keydown', function(e){
+  const slaytBolumu = document.getElementById('slayt');
+  if(!slaytBolumu || !slaytBolumu.classList.contains('aktif')) return;
+  if(e.key === 'ArrowRight') sunumGit('', 1);
+  if(e.key === 'ArrowLeft') sunumGit('', -1);
+});
+document.addEventListener('DOMContentLoaded', function(){ sunumNoktalariOlustur(''); sunumGuncelle(''); });
+
 </script>
 </body>
 </html>
