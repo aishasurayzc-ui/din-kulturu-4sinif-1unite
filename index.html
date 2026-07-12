@@ -608,6 +608,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -793,16 +838,17 @@
       <li>Bu yüzden peygamberimiz her güzel işe besmeleyle başlamamızı öğütlemiştir.</li><li>🙏 Hamd — "Elhamdülillah" Anlamı: "Övgü ve şükür Allah'a mahsustur." Bir nimete, güzel bir habere ya da başarıya kavuştuğumuzda Allah'ı övmek ve O'na teşekkür etmek için söylenir.</li><li>Hamd etmek, sahip olduklarımızın kıymetini bilmemizi sağlar.</li><li>💚 Şükür — "Allah'a şükür" Anlamı: Allah'ın bize verdiği nimetlere karşı duyulan minnettarlığı dile getirmektir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Günlük Konuşmalarda Dinî İfadeler (3/5)</h3>
     <ul class="si-liste">
       <li>Şükür, sadece dille söylenen bir söz değil; nimeti yerinde kullanmak ve başkalarıyla paylaşmaktır da.</li><li>🤝 Selam — "Selamünaleyküm" / "Ve aleykümselam" Anlamı: "Allah'ın selameti/esenliği senin üzerine olsun." Müslümanların karşılaştıklarında birbirlerine söylediği, sevgi ve barış dileyen bir ifadedir.</li><li>Peygamberimiz selamı yaymayı, insanlar arasında sevgiyi artıran bir davranış olarak tavsiye etmiştir.</li><li>🕌 Tekbir — "Allahu Ekber" Anlamı: "Allah en büyüktür." Allah'ın büyüklüğünü, üstünlüğünü anmak için söylenir.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">"Bismillah" ifadesi Kur'an-ı Kerim'de 113 surenin başında yer alır (Tevbe suresi hariç). Bu, güzel bir işe başlarken Allah'ın adını anmanın önemini gösterir.</p>
   </div>
 
 
@@ -812,16 +858,18 @@
       <li>Namazın başında ve içinde, ezanda ve bayramlarda sıkça duyduğumuz bir ifadedir.</li><li>🌙 Salavat — "Allahümme salli alâ seyyidina Muhammed" Anlamı: Peygamberimize dua etmek, ona sevgi ve saygı sunmaktır.</li><li>Peygamberimizin adı anıldığında salavat getirmek, ona olan bağlılığımızı gösterir.</li><li>😔 İstiğfar — "Estağfirullah" Anlamı: "Allah'tan bağışlanma dilerim." Yanlışlıkla kötü bir söz söylediğimizde, bir hata yaptığımızda ya da pişmanlık duyduğumuzda Allah'tan af dilemek için söylenir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları "İnşallah" demeyi "belki olur belki olmaz" gibi bir belirsizlik ifadesi sanır.</p>
+    <p class="zb-slayt-dogru">✅ Aslında "İnşallah", her şeyin Allah'ın izniyle gerçekleştiğine olan inancımızı, kesin bir tevekkül bilinciyle ifade eder.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Günlük Konuşmalarda Dinî İfadeler (5/5)</h3>
     <ul class="si-liste">
       <li>İstiğfar etmek, hatalarımızdan ders çıkarıp kendimizi düzeltmeye çalışmamız gerektiğini hatırlatır.</li><li>✨ Tesbih — "Sübhanallah" Anlamı: "Allah'ı bütün eksikliklerden uzak tutarım." Allah'ın hiçbir kusuru olamayacağını, O'nun yüceliğini dile getirmek için; genellikle hayranlık uyandıran güzellikler karşısında da söylenir.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir ve toplumda iyi dilek kültürünü güçlendirir.</p>
   </div>
 
 
@@ -831,6 +879,11 @@
       <li>Dua, kulun Allah'a yönelerek O'ndan bir şey istemesi, O'na yalvarması ve gönlünü açmasıdır.</li><li>Sevdiklerimize iyi dileklerde bulunurken de aslında onlar için Allah'tan bir şeyler dileriz.</li><li>İşte bu yüzden günlük hayatımızda birçok "dilek ifadesi" kullanırız:</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Bir arkadaşın sınavdan yüksek not aldığında "Elhamdülillah, çok sevindim!" demesi, hem başarısının kıymetini bilmesini hem de bunu Allah'a şükrederek kutlamasını gösterir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Bir Dua Tanıyorum: Sübhâneke Duası ve Anlamı (1/2)</h3>
@@ -838,16 +891,17 @@
       <li>Kelime kelime anlamı:</li><li>Ne zaman okunur? Sübhâneke duası, namaza durup iftitah (başlangıç) tekbiri aldıktan hemen sonra, Kur'an okumaya başlamadan önce okunur.</li><li>Bu yüzden bu duaya "namazın anahtarı" da denilebilir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Sence günlük hayatta en sık hangi dinî ifadeyi kullanıyoruz? Neden bu ifadeyi bu kadar sık kullanırız?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Bir Dua Tanıyorum: Sübhâneke Duası ve Anlamı (2/2)</h3>
     <ul class="si-liste">
       <li>Neden önemlidir? Sübhâneke duasıyla namaza, Allah'ı övüp yücelterek ve O'ndan başka ilah olmadığını hatırlayarak başlarız.</li><li>Bu dua, kalbimizi ibadete hazırlar ve Allah'a olan bağlılığımızı tazeler.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Bugün kaç kez "İnşallah" veya "Elhamdülillah" dedin? Bu ifadeleri kullanırken ne hissettin?</p>
   </div>
 
 
@@ -857,16 +911,17 @@
       <li>Ünitenin sonunda şu kazanımlar değerlendirilir:</li><li>Bu kazanımlar, sayfadaki "✅ Değerlendirme" ve "📝 Araştırma Oyunları" bölümlerindeki zamanlı testlerle (can hakkı ve puanlama ile) ölçülür.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Bu hafta ailenle birlikte, evde en sık kullandığınız 5 dinî ifadeyi ve anlamlarını bir kağıda yazıp mutfağa asın.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:#7c3aed">
     <h3>📖 Genişletilmiş Kavramlar Sözlüğü (1/3)</h3>
     <ul class="si-liste">
       <li>Dinî ifadeleri daha iyi anlayabilmek için bilmemiz gereken temel kavramlar, konularına göre gruplandırılmıştır:</li><li>Allah ve Peygamberimizle İlgili Kavramlar</li><li>Allah'ın Bize Verdikleri</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Sabah kalkarken, yemeğe başlarken, bir haber alırken kullandığımız dinî ifadeler, günlük hayatımızı Allah'ı hatırlayarak yaşamamızı sağlar.</p>
   </div>
 
 
@@ -876,6 +931,16 @@
       <li>Davranışlarımızın Karşılığı</li><li>Ahiretle İlgili Kavramlar</li><li>İbadetlerle İlgili Kavramlar</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Günlük hayatta kullanılan en az 5 dinî ifadeyi ve anlamlarını söyleyebilirim.</li>
+      <li>☐ Sübhâneke duasının anlamını açıklayabilirim.</li>
+      <li>☐ Bu ifadeleri ne zaman kullanacağımı biliyorum.</li>
+      <li>☐ Öğrendiğim ifadeleri günlük hayatımda kullanmaya özen gösteriyorum.</li>
+    </ul>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:#7c3aed">
     <h3>📖 Genişletilmiş Kavramlar Sözlüğü (3/3)</h3>
@@ -978,6 +1043,11 @@
 
     <div class="aciklama"><b>Biliyor muydunuz?</b> Kur'an okumaya başlarken "<b>Eûzü billâhi mine'ş-şeytâni'r-racîm</b>" (Kovulmuş şeytanın şerrinden Allah'a sığınırım) denir. Biri hapşırıp "Elhamdülillah" dediğinde ise ona "<b>Yerhamükallah</b>" (Allah sana merhamet etsin) diye karşılık verilir; o kişi de buna "Yehdinallah" diyerek cevap verir.</div>
   </div>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Dilek ve Dualarda Geçen Dinî İfadeler</h3>
@@ -995,10 +1065,12 @@
     </ul>
     <div class="aciklama"><b>Unutmayalım:</b> Bu ifadeleri kullanırken sadece bir söz söylemiş olmuyoruz; aynı zamanda karşımızdaki kişi için içtenlikle dua etmiş oluyoruz. Bu yüzden bu sözleri gönülden söylemeliyiz.</div>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">"Bismillah" ifadesi Kur'an-ı Kerim'de 113 surenin başında yer alır (Tevbe suresi hariç). Bu, güzel bir işe başlarken Allah'ın adını anmanın önemini gösterir.</p>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları "İnşallah" demeyi "belki olur belki olmaz" gibi bir belirsizlik ifadesi sanır.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Aslında "İnşallah", her şeyin Allah'ın izniyle gerçekleştiğine olan inancımızı, kesin bir tevekkül bilinciyle ifade eder.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -1015,10 +1087,15 @@
     <p><b>Ne zaman okunur?</b> Sübhâneke duası, namaza durup iftitah (başlangıç) tekbiri aldıktan hemen sonra, Kur'an okumaya başlamadan önce okunur. Bu yüzden bu duaya "namazın anahtarı" da denilebilir.</p>
     <p><b>Neden önemlidir?</b> Sübhâneke duasıyla namaza, Allah'ı övüp yücelterek ve O'ndan başka ilah olmadığını hatırlayarak başlarız. Bu dua, kalbimizi ibadete hazırlar ve Allah'a olan bağlılığımızı tazeler.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir ve toplumda iyi dilek kültürünü güçlendirir.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Bir arkadaşın sınavdan yüksek not aldığında "Elhamdülillah, çok sevindim!" demesi, hem başarısının kıymetini bilmesini hem de bunu Allah'a şükrederek kutlamasını gösterir.</p>
   </div>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Sence günlük hayatta en sık hangi dinî ifadeyi kullanıyoruz? Neden bu ifadeyi bu kadar sık kullanırız?</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -1031,10 +1108,11 @@
     </ul>
     <p>Bu kazanımlar, sayfadaki "✅ Değerlendirme" ve "📝 Araştırma Oyunları" bölümlerindeki zamanlı testlerle (can hakkı ve puanlama ile) ölçülür.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Bugün kaç kez "İnşallah" veya "Elhamdülillah" dedin? Bu ifadeleri kullanırken ne hissettin?</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Bu hafta ailenle birlikte, evde en sık kullandığınız 5 dinî ifadeyi ve anlamlarını bir kağıda yazıp mutfağa asın.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -1087,10 +1165,16 @@
       <li><b>Bayram</b> — Dinimizde sevinç ve kardeşlik duygularıyla kutlanan özel günler (Ramazan ve Kurban Bayramı gibi).</li>
     </ul>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Sabah kalkarken, yemeğe başlarken, bir haber alırken kullandığımız dinî ifadeler, günlük hayatımızı Allah'ı hatırlayarak yaşamamızı sağlar.</p>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_4-1_0" onchange="degKaydet('4-1')"><label for="deg_4-1_0">Günlük hayatta kullanılan en az 5 dinî ifadeyi ve anlamlarını söyleyebilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-1_1" onchange="degKaydet('4-1')"><label for="deg_4-1_1">Sübhâneke duasının anlamını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-1_2" onchange="degKaydet('4-1')"><label for="deg_4-1_2">Bu ifadeleri ne zaman kullanacağımı biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_4-1_3" onchange="degKaydet('4-1')"><label for="deg_4-1_3">Öğrendiğim ifadeleri günlük hayatımda kullanmaya özen gösteriyorum.</label></li>
+    </ul>
   </div>
+
 
 </section>
 
@@ -4905,6 +4989,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

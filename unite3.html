@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -579,6 +624,11 @@
       <li>Hz. Muhammed (sav) — Ahlakın En Güzel Örneği Kalem suresinin 4. ayetinde Hz. Muhammed'in (sav) yüce bir ahlak üzere olduğu belirtilir.</li><li>Ahzab suresinde de şöyle buyrulur: "Andolsun ki Resulullah, sizin için, Allah'a ve ahiret gününe kavuşmayı umanlar ve Allah'ı çok zikredenler için güzel bir örnektir." (Ahzab suresi, 21. ayet.)</li><li>Peygamberimiz (sav) her zaman doğruyu söyler, emanetleri korur, verdiği sözü tutardı.</li><li>İnsanlara karşı son derece merhametliydi; güzel sözlü, güler yüzlü ve yumuşak huyluydu.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Peygamberimiz, beş vakit namazda okunan Fatiha suresiyle günde kırk kez Allah'tan doğru yola iletilmeyi ister.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Din Güzel Ahlaktır (3/3)</h3>
@@ -586,10 +636,12 @@
       <li>Kendini beğenme, kıskançlık, yalan, dedikodu, iftira gibi kötülüklerden sakınma konusunda titizdi.</li><li>Haksızlığa karşı çıkar, her zaman haklının yanında olurdu.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Peygamberimiz, günde kırk kez okuduğumuz Fatiha suresini "namazın anahtarı" olarak nitelemiştir; Fatiha'sız namaz kabul olmaz.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları güzel ahlaklı olmayı sadece namaz kılmak, oruç tutmak gibi ibadetlerle sınırlı sanır.</p>
+    <p class="zb-slayt-dogru">✅ Güzel ahlak; doğruluk, saygı, sevgi, komşuluk hakkı gibi günlük davranışları da kapsar — Peygamberimiz "Ben ancak güzel ahlakı tamamlamak için gönderildim" buyurmuştur.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -605,10 +657,11 @@
       <li>İslam dininde anne-baba hakkının büyük önemi vardır.</li><li>Hz.</li><li>Muhammed (sav): "Büyük günahların en büyüğü, Allah'a ortak koşmak ile anne babaya isyan etmek ve eziyet etmektir." (Buhari, Edeb, 6.) — "Anne baba, kişinin cennete girmesine vesile olacak kapılardan biridir." (Tirmizi,…</li><li>👫 Kardeşler Arasında Sevgi ve Saygı Kardeşlerimiz bize en yakın olan kişilerdir.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">"Komşusu, kötülüğünden emin olmayan kimse cennete giremez." hadisinde neden özellikle komşuluk vurgulanır? Çünkü komşuluk günlük hayatta en sık karşılaştığımız ilişkidir.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Bir öğrencinin komşusunun yaşlı büyükannesine marketten alışveriş getirmesi, sılayırahim ve komşuluk hakkının günlük hayattaki somut bir yansımasıdır.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -617,16 +670,17 @@
       <li>Peygamberimiz (sav): "Küçüğümüze merhamet etmeyen, büyüğümüze saygılı davranmayan bizden değildir." (Tirmizi, Birr, 15.)</li><li>👪 Akrabalar Arasında Sevgi ve Saygı Akrabalık ilişkilerini güzel bir şekilde sürdürmeye sılayırahim denir.</li><li>Akrabaları ziyaret etmek, hâl hatır sormak, hediyeleşmek, sevinç ve üzüntüyü paylaşmak sılayırahimin gerekleridir.</li><li>Hz.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Çevrende gördüğün en güzel ahlaklı davranış neydi? Bu davranış seni neden etkiledi?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 İnsani İlişkilerin Temeli: Sevgi ve Saygı (4/6)</h3>
     <ul class="si-liste">
       <li>Muhammed (sav): "Akraba ile ilişkisini kesen cennete giremez." (Buhari, Edeb, 11.) — "Kim rızkının bollaşmasını arzu ederse akraba ile ilişkisini sürdürsün!" (Buhari, Edeb, 12.)</li><li>🏘️ Komşular Arasında Sevgi ve Saygı Komşular, evleri birbirine bitişik ya da yakın olan kişilerdir. "Komşu komşunun külüne muhtaçtır." atasözü bu yakınlığı anlatır.</li><li>Hz.</li><li>Muhammed (sav): "Komşusu, kötülüğünden emin olmayan kimse cennete giremez." (Müslim, İman, 73.) — "Allah'a ve ahiret gününe iman eden kişi komşusunu rahatsız etmesin." (Ebu Davud, Edeb, 122-123.)</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Bugün bir akrabana veya komşuna nasıl iyilik yapabilirsin?</p>
   </div>
 
 
@@ -636,6 +690,11 @@
       <li>🤝 Arkadaşlar Arasında Sevgi ve Saygı Arkadaş edinirken özenli davranmalı; iyi ahlaklı, güzel huylu kişilerle arkadaşlık kurmalıyız.</li><li>Peygamberimiz (sav): "Kişi, arkadaşının yaşayışı üzeredir.</li><li>Bu sebeple her biriniz, kiminle dostluk ettiğine dikkat etsin." (Ebu Davud, Edeb, 16.)</li><li>👩‍🏫 Öğretmenlerimizle İlişkilerimizde Sevgi ve Saygı Öğretmenler diğer bütün meslek sahiplerini yetiştirdiği için ayrı bir öneme sahiptir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte bu hafta bir akrabanızı arayıp hal hatır sorun; bu, sılayırahimin küçük ama önemli bir uygulamasıdır.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 İnsani İlişkilerin Temeli: Sevgi ve Saygı (6/6)</h3>
@@ -643,10 +702,16 @@
       <li>Bizi iyiye, güzele ve doğruya yönlendirir; Allah (cc), Peygamber (sav), din, vatan, millet ve bayrak sevgisini aşılarlar.</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Sınıf arkadaşlarınla, kardeşlerinle ilişkilerinde sevgi ve saygı göstermek, sılayırahim ve güzel ahlakın küçük ama önemli örnekleridir.</p>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Güzel ahlakın günlük hayattaki örneklerini verebilirim.</li>
+      <li>☐ Komşuluk ve akrabalık haklarını açıklayabilirim.</li>
+      <li>☐ Fatiha suresinin önemini biliyorum.</li>
+      <li>☐ Arkadaşlarıma karşı güzel ahlaklı davranmaya özen gösteriyorum.</li>
+    </ul>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -724,10 +789,16 @@
     <p>Peygamberimiz (sav) her zaman doğruyu söyler, emanetleri korur, verdiği sözü tutardı. İnsanlara karşı son derece merhametliydi; güzel sözlü, güler yüzlü ve yumuşak huyluydu. Kendini beğenme, kıskançlık, yalan, dedikodu, iftira gibi kötülüklerden sakınma konusunda titizdi. Haksızlığa karşı çıkar, her zaman haklının yanında olurdu.</p>
     <div class="aciklama"><b>Hadis-i Şerif:</b> "Ben ancak güzel ahlakı tamamlamak için gönderildim." (Muvatta, Hüsnü'l-Hulk, 8.) — "Müslüman, dilinden ve elinden insanların güvende olduğu kişidir." (Nesai, İman, 8.)</div>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Peygamberimiz, günde kırk kez okuduğumuz Fatiha suresini "namazın anahtarı" olarak nitelemiştir; Fatiha'sız namaz kabul olmaz.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Peygamberimiz, beş vakit namazda okunan Fatiha suresiyle günde kırk kez Allah'tan doğru yola iletilmeyi ister.</p>
   </div>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları güzel ahlaklı olmayı sadece namaz kılmak, oruç tutmak gibi ibadetlerle sınırlı sanır.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Güzel ahlak; doğruluk, saygı, sevgi, komşuluk hakkı gibi günlük davranışları da kapsar — Peygamberimiz "Ben ancak güzel ahlakı tamamlamak için gönderildim" buyurmuştur.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -759,14 +830,15 @@
     <p><b>👩‍🏫 Öğretmenlerimizle İlişkilerimizde Sevgi ve Saygı</b><br>
     Öğretmenler diğer bütün meslek sahiplerini yetiştirdiği için ayrı bir öneme sahiptir. Bizi iyiye, güzele ve doğruya yönlendirir; Allah (cc), Peygamber (sav), din, vatan, millet ve bayrak sevgisini aşılarlar.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">"Komşusu, kötülüğünden emin olmayan kimse cennete giremez." hadisinde neden özellikle komşuluk vurgulanır? Çünkü komşuluk günlük hayatta en sık karşılaştığımız ilişkidir.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Bir öğrencinin komşusunun yaşlı büyükannesine marketten alışveriş getirmesi, sılayırahim ve komşuluk hakkının günlük hayattaki somut bir yansımasıdır.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Bugün bir akrabana veya komşuna nasıl iyilik yapabilirsin?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Çevrende gördüğün en güzel ahlaklı davranış neydi? Bu davranış seni neden etkiledi?</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -784,10 +856,20 @@
       <tr><td style="padding:6px;">Sırâtallezîne en'amte aleyhim, ğayril mağdûbi aleyhim veleddâllîn</td><td style="padding:6px;">Kendilerine lütuf ve ikramda bulunduğun kimselerin yolunu; gazaba uğramışların ve sapmışların yolunu değil!</td></tr>
     </table>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Sınıf arkadaşlarınla, kardeşlerinle ilişkilerinde sevgi ve saygı göstermek, sılayırahim ve güzel ahlakın küçük ama önemli örnekleridir.</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte bu hafta bir akrabanızı arayıp hal hatır sorun; bu, sılayırahimin küçük ama önemli bir uygulamasıdır.</p>
   </div>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_4-3_0" onchange="degKaydet('4-3')"><label for="deg_4-3_0">Güzel ahlakın günlük hayattaki örneklerini verebilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-3_1" onchange="degKaydet('4-3')"><label for="deg_4-3_1">Komşuluk ve akrabalık haklarını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-3_2" onchange="degKaydet('4-3')"><label for="deg_4-3_2">Fatiha suresinin önemini biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_4-3_3" onchange="degKaydet('4-3')"><label for="deg_4-3_3">Arkadaşlarıma karşı güzel ahlaklı davranmaya özen gösteriyorum.</label></li>
+    </ul>
+  </div>
+
 
 </section>
 
@@ -3233,6 +3315,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

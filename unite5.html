@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -579,6 +624,11 @@
       <li>İslam kültüründe temizlik yerine zaman zaman taharet kavramı kullanılır.</li><li>Allah (cc) temiz olanları sever: "...Allah tertemiz olanları sever." (Tevbe suresi, 108. ayet.) Peygamberimiz (sav): "Allah güzeldir, güzelliği sever; temizdir, temizliği sever..." (Tirmizi, Edeb, 41.) — "...Temizlik…</li><li>Namaz kılacak Müslüman öncelikle abdest almalıdır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Bir pet şişenin doğada yok olması yaklaşık 400 yıl sürer — bu yüzden geri dönüşüm hem dini hem çevresel bir sorumluluktur.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 İslam Dini ve Temizlik (3/3)</h3>
@@ -586,10 +636,12 @@
       <li>Peygamberimiz (sav): "Cennetin anahtarı namaz, namazın anahtarı da abdesttir." (Tirmizi, Taharet, 1.) Kâbe'yi ziyaret edecek kişilerin de abdestli olması gerekir.</li><li>Abdest alma sırası: Niyet edilip Eûzü-besmele çekilir → Eller yıkanır → Ağız çalkalanır → Burun temizlenir → Yüz yıkanır → Sağ, sonra sol kol dirseklerle yıkanır → Baş ıslak elle mesh edilir → Kulakların içi…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">"Temizlik imandan gelir." hadisi, sadece bedensel değil, çevresel ve manevi temizliğin de imanın bir parçası olduğunu öğretir.</p>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları temizliği sadece beden temizliği (yıkanmak) olarak düşünür.</p>
+    <p class="zb-slayt-dogru">✅ İslam'da temizlik hem maddi (beden, çevre) hem de manevi (doğruluk, dürüstlük, kötü huylardan arınma) boyutu olan geniş bir kavramdır.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
@@ -605,10 +657,11 @@
       <li>Cebrail bana diş temizliğini o kadar çok tavsiye etti ki bana ve ümmetime bunun farz olacağından korktum." (İbni Mace, Taharet, 7.)</li><li>Saç ve tırnak temizliğine önem verilmelidir.</li><li>Elbise temizliği de beden temizliğinin bir parçasıdır: "Elbiseni tertemiz tut." (Müddessir suresi, 4. ayet.) "İnsanlar kıyafetlerine göre karşılanır, düşüncelerine göre uğurlanır." sözü, temiz giyinmenin önemine işaret…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Bir pet şişenin doğada yok olması ne kadar sürer? Yaklaşık 400 yıl! Bu yüzden geri dönüşüm çok önemlidir.</p>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Bir öğrencinin okul bahçesindeki çöpü görüp çöp kutusuna atması, hem maddi temizliğe hem de "kul hakkı" bilincine güzel bir örnektir.</p>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
@@ -617,16 +670,17 @@
       <li>Temiz ve düzenli bir evde yaşamak insana huzur verir.</li><li>Odamızı düzenli kullanmalı, yatağımızı toplamalı, eşyalarımızı yerli yerine koymalıyız.</li><li>Tuvalet, mutfak, salon gibi ortak alanların temizliğinde de sorumluluk almalıyız.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Çevremizi temiz tutmak neden dini bir sorumluluk olarak görülür?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Evimi ve Okulumu Temiz Tutarım (2/2)</h3>
     <ul class="si-liste">
       <li>Okulumuzun temiz ve düzenli olması sağlığımız ve eğitimimiz açısından önemlidir.</li><li>Okulu kirletmenin, başkalarının hakkını çiğnemek yani kul hakkı yemek anlamına geldiğini unutmamalıyız.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Bugün çevreni temiz tutmak için ne yapabilirsin?</p>
   </div>
 
 
@@ -636,6 +690,11 @@
       <li>Çevre, içinde yaşadığımız, bizi her an etkisi altında bulunduran ortamdır (hava, su, toprak, bitkiler, hayvanlar).</li><li>Her yıl 743 milyon ton verimli üst toprağımız erozyonla kayboluyor; dünya genelinde her yıl İsviçre'nin 3 katı büyüklüğünde alan çölleşmeyle yok oluyor.</li><li>Allah (cc) her şeyi bir ölçü ve dengede yaratmıştır: "Gerçekten biz, her şeyi bir ölçü ve dengede yarattık." (Kamer suresi, 49. ayet.) "Göğü Allah yükseltti ve mizanı (dengeyi) O koydu.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte evde bir gün "sıfır atık" kuralı uygulayın (geri dönüştürülebilir atıkları ayırın) ve deneyiminizi paylaşın.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Çevremi Temiz Tutarım (2/3)</h3>
@@ -643,10 +702,16 @@
       <li>Sakın dengeyi bozmayın." (Rahman suresi, 7-8. ayetler.)</li><li>Çevreyi oluşturan unsurlar insana Allah'ın emanetidir. "İnsanların bizzat kendi işledikleri yüzünden karada ve denizde düzen bozuldu..." (Rum suresi, 41. ayet.)</li><li>Peygamberimiz (sav) ağaç dikmeyi teşvik etmiştir: "Bir Müslüman bir ağaç diker veya ekin eker de ondan bir kuş, insan veya herhangi bir hayvan yerse bu, onun için sadaka sayılır." (Buhari, Edeb, 27.) "Birinizin elinde…</li>
     </ul>
   </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">Abdest alırken öğrendiğimiz düzenli temizlik alışkanlığı, günlük hayatta elleri yıkamak, odamızı düzenli tutmak gibi davranışlara da yansır.</p>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Maddi ve manevi temizlik arasındaki farkı açıklayabilirim.</li>
+      <li>☐ Abdestin temel adımlarını sayabilirim.</li>
+      <li>☐ Çevre kirliliğinin zararlarına örnek verebilirim.</li>
+      <li>☐ Çevremi temiz tutmaya özen gösteriyorum.</li>
+    </ul>
   </div>
+
 
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
@@ -725,10 +790,11 @@
     <div class="aciklama"><b>Ayet:</b> "Ey iman edenler! Namaza kalkacağınız zaman yüzlerinizi, dirseklere kadar ellerinizi ve -başlarınıza mesh edip- her iki topuğa kadar da ayaklarınızı yıkayın... Allah size herhangi bir güçlük çıkarmak istemez. Fakat O sizi tertemiz yapmak ve üzerinizdeki nimetini tamamlamak ister ki şükredesiniz." (Maide suresi, 6. ayet.)</div>
     <p><b>Abdest alma sırası:</b> Niyet edilip Eûzü-besmele çekilir → Eller yıkanır → Ağız çalkalanır → Burun temizlenir → Yüz yıkanır → Sağ, sonra sol kol dirseklerle yıkanır → Baş ıslak elle mesh edilir → Kulakların içi şehadet/serçe parmakla, arkası başparmakla mesh edilir → Boyun mesh edilir → Sağ, sonra sol ayak topuklarla yıkanır.</p>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">"Temizlik imandan gelir." hadisi, sadece bedensel değil, çevresel ve manevi temizliğin de imanın bir parçası olduğunu öğretir.</p>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Bir pet şişenin doğada yok olması yaklaşık 400 yıl sürer — bu yüzden geri dönüşüm hem dini hem çevresel bir sorumluluktur.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -738,10 +804,16 @@
     <p>Ağız ve diş sağlığı önemlidir. Hz. Peygamber (sav), dişlerini <b>misvak</b> denilen bir tür ağaç fırçasıyla temizlerdi. "Misvak kullanın... Cebrail bana diş temizliğini o kadar çok tavsiye etti ki bana ve ümmetime bunun farz olacağından korktum." (İbni Mace, Taharet, 7.)</p>
     <p>Saç ve tırnak temizliğine önem verilmelidir. Elbise temizliği de beden temizliğinin bir parçasıdır: "Elbiseni tertemiz tut." (Müddessir suresi, 4. ayet.) "İnsanlar kıyafetlerine göre karşılanır, düşüncelerine göre uğurlanır." sözü, temiz giyinmenin önemine işaret eder.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Bir pet şişenin doğada yok olması ne kadar sürer? Yaklaşık 400 yıl! Bu yüzden geri dönüşüm çok önemlidir.</p>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları temizliği sadece beden temizliği (yıkanmak) olarak düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ İslam'da temizlik hem maddi (beden, çevre) hem de manevi (doğruluk, dürüstlük, kötü huylardan arınma) boyutu olan geniş bir kavramdır.</p>
   </div>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Bir öğrencinin okul bahçesindeki çöpü görüp çöp kutusuna atması, hem maddi temizliğe hem de "kul hakkı" bilincine güzel bir örnektir.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -749,10 +821,15 @@
     <p>Temiz ve düzenli bir evde yaşamak insana <b>huzur</b> verir. Odamızı düzenli kullanmalı, yatağımızı toplamalı, eşyalarımızı yerli yerine koymalıyız. Tuvalet, mutfak, salon gibi ortak alanların temizliğinde de sorumluluk almalıyız.</p>
     <p>Okulumuzun temiz ve düzenli olması sağlığımız ve eğitimimiz açısından önemlidir. Okulu kirletmenin, başkalarının hakkını çiğnemek yani <b>kul hakkı</b> yemek anlamına geldiğini unutmamalıyız.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Bugün çevreni temiz tutmak için ne yapabilirsin?</p>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Çevremizi temiz tutmak neden dini bir sorumluluk olarak görülür?</p>
   </div>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte evde bir gün "sıfır atık" kuralı uygulayın (geri dönüştürülebilir atıkları ayırın) ve deneyiminizi paylaşın.</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -765,10 +842,16 @@
     <div class="aciklama"><b>Hadis-i Şerif:</b> "Lanete sebep olan şu üç şeyi yapmaktan sakının: Su kaynaklarına, yol ortasına ve gölgelik yerlere abdest bozmaktan sakının." (Ebu Davud, Taharet, 14.)</div>
     <p>Çöpleri çöp kutusuna atmalı, geri dönüştürülebilir atıkları <b>geri dönüşüm</b> kutularına ayırmalı, ormanları ve ağaçları korumalıyız.</p>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">Abdest alırken öğrendiğimiz düzenli temizlik alışkanlığı, günlük hayatta elleri yıkamak, odamızı düzenli tutmak gibi davranışlara da yansır.</p>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_4-5_0" onchange="degKaydet('4-5')"><label for="deg_4-5_0">Maddi ve manevi temizlik arasındaki farkı açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-5_1" onchange="degKaydet('4-5')"><label for="deg_4-5_1">Abdestin temel adımlarını sayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-5_2" onchange="degKaydet('4-5')"><label for="deg_4-5_2">Çevre kirliliğinin zararlarına örnek verebilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-5_3" onchange="degKaydet('4-5')"><label for="deg_4-5_3">Çevremi temiz tutmaya özen gösteriyorum.</label></li>
+    </ul>
   </div>
+
 
 </section>
 
@@ -3215,6 +3298,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>

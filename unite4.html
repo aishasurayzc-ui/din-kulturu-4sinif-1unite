@@ -437,6 +437,51 @@
 .ozel-toast{ position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:#22333b; color:#fff; padding:14px 22px; border-radius:24px; box-shadow:0 6px 20px rgba(0,0,0,.3); z-index:1000; animation:ozelToastGir .3s ease; font-weight:bold; max-width:80vw; text-align:center; }
 @keyframes ozelToastGir{ from{opacity:0; transform:translateX(-50%) translateY(20px);} to{opacity:1; transform:translateX(-50%) translateY(0);} }
 
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Konu Ozeti) ===================== */
+.zb-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zb-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zb-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zb-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zb-merak .zb-baslik{ color:#7c3aed; }
+.zb-yanlis{ background:#fff0f0; border-left:6px solid #d62828; }
+.zb-yanlis .zb-baslik{ color:#d62828; }
+.zb-yanlis .zb-yanlis-satir{ color:#a31515; margin:4px 0; }
+.zb-yanlis .zb-dogru-satir{ color:#2d6a4f; margin:4px 0; font-weight:bold; }
+.zb-ornek{ background:#eafaf1; border-left:6px solid #40916c; }
+.zb-ornek .zb-baslik{ color:#40916c; }
+.zb-dusun{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zb-dusun .zb-baslik{ color:#c9740b; }
+.zb-aile{ background:#fdeef5; border-left:6px solid #d6336c; }
+.zb-aile .zb-baslik{ color:#d6336c; }
+.zb-degerlendir{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zb-degerlendir .zb-baslik{ color:#2a6f97; }
+.zb-degerlendir ul{ list-style:none; padding:0; margin:0; }
+.zb-degerlendir li{ display:flex; align-items:flex-start; gap:8px; margin:8px 0; font-size:.95em; line-height:1.4; }
+.zb-degerlendir input[type=checkbox]{ width:18px; height:18px; margin-top:2px; flex-shrink:0; accent-color:#2a6f97; cursor:pointer; }
+.zb-degerlendir label{ cursor:pointer; }
+
+/* ===================== 6 BOLUMLU ZENGINLESTIRME (Sunum slaytlari) ===================== */
+.s-zb{ color:#22333b; }
+.s-zb-merak{ background:#f3ecfb; }
+.s-zb-yanlis{ background:#fff0f0; }
+.s-zb-ornek{ background:#eafaf1; }
+.s-zb-dusun{ background:#fff4e6; }
+.s-zb-aile{ background:#fdeef5; }
+.s-zb-degerlendir{ background:#eaf2ff; }
+.zb-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zb-merak .zb-slayt-ust{ color:#7c3aed; }
+.s-zb-yanlis .zb-slayt-ust{ color:#d62828; }
+.s-zb-ornek .zb-slayt-ust{ color:#40916c; }
+.s-zb-dusun .zb-slayt-ust{ color:#c9740b; }
+.s-zb-aile .zb-slayt-ust{ color:#d6336c; }
+.s-zb-degerlendir .zb-slayt-ust{ color:#2a6f97; }
+.zb-slayt-metin{ font-size:1.1em; line-height:1.5; max-width:640px; }
+.zb-slayt-yanlis{ color:#a31515; font-size:1em; margin:6px 0; }
+.zb-slayt-dogru{ color:#2d6a4f; font-size:1em; margin:6px 0; font-weight:bold; }
+.zb-slayt-liste{ list-style:none; padding:0; margin:0; text-align:left; max-width:600px; }
+.zb-slayt-liste li{ font-size:1em; margin:8px 0; }
+
 </style>
 </head>
 <body>
@@ -579,16 +624,17 @@
       <li>Erkek çocuk sahibi olmak şeref sayılır, kız çocuklarına değer verilmezdi. Toplumda köleler vardı ve onlara hiçbir hak tanınmazdı.</li><li>Şehir/köyde yerleşik yaşayanlara hadari, göçebe yaşayanlara bedevi denirdi. Deve, çöl şartlarında vazgeçilmez bir hayvandı.</li><li>Dinî Durum: Tevhit inancından uzaklaşılmış, putperestlik yaygınlaşmıştı. Put, tapınmak amacıyla yapılan heykellerdir.</li><li>Putperestler Allah'ın varlığını kabul etmekle birlikte O'na başka varlıkları da ortak koşuyorlardı; buna şirk, böyle inanan kişiye de müşrik denir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-merak" data-tip="zb">
+    <p class="zb-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zb-slayt-metin">Hz. Muhammed (sav) peygamber olmadan önce bile "el-Emin" (güvenilir) lakabıyla tanınıyordu.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Hz. Muhammed'in (sav) Doğduğu Çevre (3/3)</h3>
     <ul class="si-liste">
       <li>Kâbe'nin içinde 360 civarında put bulunuyordu. Az sayıda Hanif (Hz.</li><li>İbrahim'in tevhit inancını benimseyen, putlara tapmayı reddeden kişiler) de vardı.</li><li>Bu dönemin geneline, cehalet ve kötülüğün yaygın olması sebebiyle Cahiliye Dönemi denir.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
-    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
-    <p class="zg-slayt-metin">Hz. Muhammed (sav), peygamber olmadan önce bile "el-Emin" (güvenilir) lakabıyla tanınıyordu — ahlakı peygamberlikten önce de örnekti.</p>
   </div>
 
 
@@ -598,16 +644,18 @@
       <li>Hz. Muhammed'in (sav) Ailesi</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-yanlis" data-tip="zb">
+    <p class="zb-slayt-ust">❌ YANLIŞ BİLİNENLER</p>
+    <p class="zb-slayt-yanlis">❌ Bazıları Hz. Muhammed'in sadece yetişkinlikte örnek bir insan olduğunu, çocukluğunun sıradan geçtiğini düşünür.</p>
+    <p class="zb-slayt-dogru">✅ Hz. Muhammed, çocukluğundan itibaren dürüstlüğü ve güvenilirliğiyle tüm Mekke'de tanınıyordu; bu, ahlakının peygamberlikten çok önce şekillendiğini gösterir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Doğumu, Çocukluk ve Gençlik Yılları (1/3)</h3>
     <ul class="si-liste">
       <li>Hz.</li><li>Muhammed (sav), 20 Nisan (12 Rebiülevvel) 571 tarihinde Mekke'de, babası öldüğü için yetim olarak doğdu. "Muhammed" ismi "övülen, iyi vasıfları kendisinde toplamış kişi" anlamına gelir.</li><li>Dört yıl Halime'nin yanında kaldıktan sonra annesine döndü. Altı yaşındayken annesi Amine, Medine dönüşü Ebvâ'da vefat etti.</li><li>Sekiz yaşındayken de dedesi Abdülmuttalib vefat etti ve onu amcası Ebu Talib'e emanet etti. Hz.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
-    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
-    <p class="zg-slayt-metin">Hz. Muhammed'in ilk vahyi aldığı Hira Mağarası hangi dağdadır? Nur Dağı'ndadır ve Kâbe'ye yürüyerek yaklaşık 1-2 saat mesafededir.</p>
   </div>
 
 
@@ -617,6 +665,11 @@
       <li>Muhammed (sav), yirmi beş yaşına kadar Ebu Talib'in yanında yaşadı.</li><li>Gençliğinde ticaretle uğraştı; dürüstlüğü ve güvenilirliğiyle Mekkelilerin takdirini kazandı ve kendisine "el-Emin" (güvenilir) lakabı verildi.</li><li>Ticari işlerini yürüttüğü Hz.</li><li>Hatice (ra) ile evlendi; bu evlilikten altı çocukları (dördü kız: Zeyneb, Rukiye, Ümmü Gülsüm, Fatıma; ikisi erkek: Kasım, Abdullah) oldu.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-ornek" data-tip="zb">
+    <p class="zb-slayt-ust">🌍 GERÇEK HAYATTAN BİR ÖRNEK</p>
+    <p class="zb-slayt-metin">Kâbe'nin tamirinde kabileler arasında çıkan anlaşmazlıkta, herkesin ona güvenip Hz. Muhammed'i hakem seçmesi, onun gençliğindeki güvenilirliğinin somut bir örneğidir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--kirmizi)">
     <h3>📌 Doğumu, Çocukluk ve Gençlik Yılları (3/3)</h3>
@@ -624,16 +677,17 @@
       <li>Daha sonra Hz. Mariye'den İbrahim adlı bir oğlu daha olmuştur.</li><li>Gençliğinde, şehirdeki haksızlıkları gidermek amacıyla kurulan Hilfülfudul topluluğunda da yer aldı.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-dusun" data-tip="zb">
+    <p class="zb-slayt-ust">💭 DÜŞÜN VE CEVAPLA</p>
+    <p class="zb-slayt-metin">Hz. Muhammed'in hangi özelliğini kendi hayatında uygulamak isterdin? Nasıl uygulardın?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Mekke ve Medine Yılları (1/4)</h3>
     <ul class="si-liste">
       <li>İlk Vahiy: Hz.</li><li>Muhammed (sav) 40 yaşındayken, Hira Mağarası'nda Cebrail (as) kendisine göründü ve Alak suresinin ilk beş ayetini okudu.</li><li>İlk Müslümanlar: Hz. Hatice, Hz. Ali, Hz. Ebu Bekir ve Zeyd (ra).</li><li>Zorluklar: Müşriklerin baskıları artınca bazı Müslümanlar 615-616'da Habeşistan'a hicret etti. 620 yılında Hz.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
-    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
-    <p class="zg-slayt-metin">Hz. Muhammed'in hangi güzel özelliğini kendi hayatında uygulamak istersin?</p>
   </div>
 
 
@@ -643,16 +697,17 @@
       <li>Hatice (ra) ve Ebu Talib'in vefatı sebebiyle bu yıla Hüzün Yılı denir.</li><li>Ardından İsra (Mekke'den Kudüs'teki Mescid-i Aksa'ya gece yolculuğu) ve Miraç (Mescid-i Aksa'dan Allah katına yükseliş) mucizesi gerçekleşti.</li><li>Hz. Muhammed (sav) İslam'ı yaymak için Taif'e gitti ancak kötü karşılandı.</li><li>Akabe Biatları: 620'de 6 Medineli (I. Akabe Biatı), 621'de 75 Medineli (II. Akabe Biatı) Hz.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-aile" data-tip="zb">
+    <p class="zb-slayt-ust">👨‍👩‍👧 AİLEMLE YAPIYORUM</p>
+    <p class="zb-slayt-metin">Ailenle birlikte Hz. Muhammed'in hayatından bildiğiniz bir olayı anlatın ve bu olaydan çıkardığınız dersi paylaşın.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>📌 Mekke ve Medine Yılları (3/4)</h3>
     <ul class="si-liste">
       <li>Muhammed'e (sav) bağlılık sözü verdi.</li><li>Hicret: 622 yılında Hz. Muhammed (sav), yatağına Hz. Ali'yi (ra) bırakıp Hz.</li><li>Ebu Bekir (ra) ile birlikte Mekke'den ayrıldı; Sevr Mağarası'nda gizlendi, sonra Medine'ye ulaştı.</li><li>Medine'de Mescid-i Nebevi'yi yaptırdı, Mekkeli Muhacirlerle Medineli Ensar arasında kardeşlik bağı kurdu ve farklı inançların bir arada yaşamasını sağlayan Medine Sözleşmesi'ni imzaladı.</li>
     </ul>
-  </div>
-  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
-    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
-    <p class="zg-slayt-metin">"El-Emin" olmak; bugün de sözünde durmak, emanete sahip çıkmak ve güvenilir olmak demektir — arkadaşlarımızla ilişkilerimizde bunu uygulayabiliriz.</p>
   </div>
 
 
@@ -662,6 +717,16 @@
       <li>Savaşlar ve Fetih: Mekkeliler 624, 625, 627'de Bedir, Uhud, Hendek savaşlarını açtı ama başarılı olamadı.</li><li>628'de Hudeybiye Antlaşması imzalandı; antlaşma bozulunca 630'da Mekke'nin Fethi kansız gerçekleşti ve Kâbe'deki putlar temizlendi.</li><li>Veda Haccı ve Vefatı: 632 yılında Veda Haccını yaptı ve Veda Hutbesi'ni verdi (can/mal/namus dokunulmazlığı, faizin ve kan davalarının yasaklanması, kadın haklarının korunması, insanların eşitliği, Kur'an ve sünnete…</li><li>8 Haziran 632'de Medine'de vefat etti; mezarı Mescid-i Nebevi'nin bitişiğinde Ravza-i Mutahhara'dadır.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zb s-zb-degerlendir" data-tip="zb">
+    <p class="zb-slayt-ust">✅ KENDİMİ DEĞERLENDİRİYORUM</p>
+    <ul class="zb-slayt-liste">
+      <li>☐ Hz. Muhammed'in doğumu ve çocukluğu hakkında bilgi verebilirim.</li>
+      <li>☐ 'El-Emin' lakabının anlamını açıklayabilirim.</li>
+      <li>☐ Hicret kavramını biliyorum.</li>
+      <li>☐ Hz. Muhammed'i örnek alarak güvenilir olmaya çalışıyorum.</li>
+    </ul>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:#7c3aed">
     <h3>📌 Bir Dua Tanıyorum: Salli ve Barik Duaları</h3>
@@ -737,6 +802,11 @@
     <div class="aciklama"><b>Ayet:</b> "Onlardan biri, Rahman'a isnat ettiği kız çocuğuyla müjdelenince hiddetlenerek yüzü simsiyah kesilir." (Zuhruf suresi, 17. ayet.)</div>
     <p><b>Dinî Durum:</b> Tevhit inancından uzaklaşılmış, <b>putperestlik</b> yaygınlaşmıştı. <b>Put</b>, tapınmak amacıyla yapılan heykellerdir. Putperestler Allah'ın varlığını kabul etmekle birlikte O'na başka varlıkları da ortak koşuyorlardı; buna <b>şirk</b>, böyle inanan kişiye de <b>müşrik</b> denir. Kâbe'nin içinde 360 civarında put bulunuyordu. Az sayıda <b>Hanif</b> (Hz. İbrahim'in tevhit inancını benimseyen, putlara tapmayı reddeden kişiler) de vardı. Bu dönemin geneline, cehalet ve kötülüğün yaygın olması sebebiyle <b>Cahiliye Dönemi</b> denir.</p>
   </div>
+  <div class="zb-kutu zb-merak">
+    <p class="zb-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zb-metin">Hz. Muhammed (sav) peygamber olmadan önce bile "el-Emin" (güvenilir) lakabıyla tanınıyordu.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">2️⃣ Hz. Muhammed'in (sav) Ailesi</h3>
@@ -749,10 +819,12 @@
     </ul>
     <div class="aciklama"><b>Fil Olayı:</b> Yemen valisi Ebrehe, Kâbe'yi yıkmak için fillerle Mekke'ye yürüdü. Allah, gökten kuşlarla attırdığı taşlarla orduyu dağıttı ve Kâbe'yi korudu. Bu olay Kur'an'daki <b>Fil suresi</b>nde anlatılır.</div>
   </div>
-  <div class="zg-kutu zg-bilgi">
-    <p class="zg-baslik">💡 Bilgi Kutusu</p>
-    <p class="zg-metin">Hz. Muhammed (sav), peygamber olmadan önce bile "el-Emin" (güvenilir) lakabıyla tanınıyordu — ahlakı peygamberlikten önce de örnekti.</p>
+  <div class="zb-kutu zb-yanlis">
+    <p class="zb-baslik">❌ Yanlış Bilinenler</p>
+    <p class="zb-metin zb-yanlis-satir">❌ Bazıları Hz. Muhammed'in sadece yetişkinlikte örnek bir insan olduğunu, çocukluğunun sıradan geçtiğini düşünür.</p>
+    <p class="zb-metin zb-dogru-satir">✅ Hz. Muhammed, çocukluğundan itibaren dürüstlüğü ve güvenilirliğiyle tüm Mekke'de tanınıyordu; bu, ahlakının peygamberlikten çok önce şekillendiğini gösterir.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -763,10 +835,15 @@
     <div class="aciklama"><b>Kâbe Hakemliği:</b> Kâbe onarımında Hacerülesved'i yerine koyma konusunda kabileler arasında tartışma çıkınca, Kâbe'ye ilk gelen kişinin hakemlik yapması kararlaştırıldı. Gelen kişi Hz. Muhammed (sav) oldu; taşı bir örtü üzerine koyarak her kabileden birinin örtüyü tutmasını sağladı ve adil bir çözüm buldu.</div>
     <p>Gençliğinde, şehirdeki haksızlıkları gidermek amacıyla kurulan <b>Hilfülfudul</b> topluluğunda da yer aldı.</p>
   </div>
-  <div class="zg-kutu zg-merak">
-    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
-    <p class="zg-metin">Hz. Muhammed'in ilk vahyi aldığı Hira Mağarası hangi dağdadır? Nur Dağı'ndadır ve Kâbe'ye yürüyerek yaklaşık 1-2 saat mesafededir.</p>
+  <div class="zb-kutu zb-ornek">
+    <p class="zb-baslik">🌍 Gerçek Hayattan Bir Örnek</p>
+    <p class="zb-metin">Kâbe'nin tamirinde kabileler arasında çıkan anlaşmazlıkta, herkesin ona güvenip Hz. Muhammed'i hakem seçmesi, onun gençliğindeki güvenilirliğinin somut bir örneğidir.</p>
   </div>
+  <div class="zb-kutu zb-dusun">
+    <p class="zb-baslik">💭 Düşün ve Cevapla</p>
+    <p class="zb-metin">Hz. Muhammed'in hangi özelliğini kendi hayatında uygulamak isterdin? Nasıl uygulardın?</p>
+  </div>
+
 
 
   <div class="kutu-panel">
@@ -778,10 +855,11 @@
     <p><b>Savaşlar ve Fetih:</b> Mekkeliler 624, 625, 627'de <b>Bedir, Uhud, Hendek</b> savaşlarını açtı ama başarılı olamadı. 628'de <b>Hudeybiye Antlaşması</b> imzalandı; antlaşma bozulunca 630'da <b>Mekke'nin Fethi</b> kansız gerçekleşti ve Kâbe'deki putlar temizlendi.</p>
     <p><b>Veda Haccı ve Vefatı:</b> 632 yılında <b>Veda Haccı</b>nı yaptı ve <b>Veda Hutbesi</b>'ni verdi (can/mal/namus dokunulmazlığı, faizin ve kan davalarının yasaklanması, kadın haklarının korunması, insanların eşitliği, Kur'an ve sünnete uyma). <b>8 Haziran 632</b>'de Medine'de vefat etti; mezarı Mescid-i Nebevi'nin bitişiğinde <b>Ravza-i Mutahhara</b>'dadır.</p>
   </div>
-  <div class="zg-kutu zg-soru">
-    <p class="zg-baslik">❓ Günün Sorusu</p>
-    <p class="zg-metin">Hz. Muhammed'in hangi güzel özelliğini kendi hayatında uygulamak istersin?</p>
+  <div class="zb-kutu zb-aile">
+    <p class="zb-baslik">👨‍👩‍👧 Ailemle Yapıyorum</p>
+    <p class="zb-metin">Ailenle birlikte Hz. Muhammed'in hayatından bildiğiniz bir olayı anlatın ve bu olaydan çıkardığınız dersi paylaşın.</p>
   </div>
+
 
 
   <div class="kutu-panel">
@@ -794,10 +872,16 @@
     </table>
     <div class="aciklama">Peygamberimizin (sav) aile fertlerine, ev halkına ve yakın akrabalarına <b>Ehlibeyt</b> denir.</div>
   </div>
-  <div class="zg-kutu zg-hayat">
-    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
-    <p class="zg-metin">"El-Emin" olmak; bugün de sözünde durmak, emanete sahip çıkmak ve güvenilir olmak demektir — arkadaşlarımızla ilişkilerimizde bunu uygulayabiliriz.</p>
+  <div class="zb-kutu zb-degerlendir">
+    <p class="zb-baslik">✅ Kendimi Değerlendiriyorum</p>
+    <ul>
+      <li><input type="checkbox" id="deg_4-4_0" onchange="degKaydet('4-4')"><label for="deg_4-4_0">Hz. Muhammed'in doğumu ve çocukluğu hakkında bilgi verebilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-4_1" onchange="degKaydet('4-4')"><label for="deg_4-4_1">'El-Emin' lakabının anlamını açıklayabilirim.</label></li>
+      <li><input type="checkbox" id="deg_4-4_2" onchange="degKaydet('4-4')"><label for="deg_4-4_2">Hicret kavramını biliyorum.</label></li>
+      <li><input type="checkbox" id="deg_4-4_3" onchange="degKaydet('4-4')"><label for="deg_4-4_3">Hz. Muhammed'i örnek alarak güvenilir olmaya çalışıyorum.</label></li>
+    </ul>
   </div>
+
 
 </section>
 
@@ -3243,6 +3327,27 @@ function ozelOnay(mesaj, callback){
   btnler[0].onclick = ()=>{ arka.remove(); callback(true); };
   btnler[1].onclick = ()=>{ arka.remove(); callback(false); };
 }
+
+
+// ===================== KENDIMI DEGERLENDIRIYORUM - CHECKBOX KAYDI =====================
+function degOku(uniteKimlik){
+  try{ return JSON.parse(localStorage.getItem('dkabDegerlendirme_'+uniteKimlik)) || {}; }catch(e){ return {}; }
+}
+function degKaydet(uniteKimlik){
+  const durum = {};
+  document.querySelectorAll('[id^="deg_'+uniteKimlik+'_"]').forEach(cb=>{ durum[cb.id] = cb.checked; });
+  try{ localStorage.setItem('dkabDegerlendirme_'+uniteKimlik, JSON.stringify(durum)); }catch(e){}
+}
+function degYukle(uniteKimlik){
+  const durum = degOku(uniteKimlik);
+  Object.keys(durum).forEach(id=>{
+    const cb = document.getElementById(id);
+    if(cb) cb.checked = durum[id];
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){
+  if(typeof UNITE_KIMLIK !== 'undefined') degYukle(UNITE_KIMLIK);
+});
 
 </script>
 </body>
