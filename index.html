@@ -530,6 +530,33 @@
   .sb-baslik{ font-size:1.25em; } .sa-meal{ font-size:1em; } .sl-liste li,.si-liste li{ font-size:.85em; }
 }
 
+
+/* ===================== ZENGINLESTIRME KUTULARI ===================== */
+.zg-kutu{ border-radius:12px; padding:16px 18px; margin:16px 0; box-shadow:0 3px 10px rgba(0,0,0,.08); }
+.zg-baslik{ font-weight:bold; font-size:1.05em; margin:0 0 8px; display:flex; align-items:center; gap:8px; }
+.zg-metin{ margin:0; line-height:1.55; font-size:.97em; }
+.zg-bilgi{ background:#eaf2ff; border-left:6px solid #2a6f97; }
+.zg-bilgi .zg-baslik{ color:#2a6f97; }
+.zg-merak{ background:#f3ecfb; border-left:6px solid #7c3aed; }
+.zg-merak .zg-baslik{ color:#7c3aed; }
+.zg-soru{ background:#fff4e6; border-left:6px solid #f4a261; }
+.zg-soru .zg-baslik{ color:#c9740b; }
+.zg-hayat{ background:#eafaf1; border-left:6px solid #40916c; }
+.zg-hayat .zg-baslik{ color:#40916c; }
+
+
+.s-zg{ color:#22333b; }
+.s-zg-bilgi{ background:#eaf2ff; }
+.s-zg-merak{ background:#f3ecfb; }
+.s-zg-soru{ background:#fff4e6; }
+.s-zg-hayat{ background:#eafaf1; }
+.zg-slayt-ust{ font-weight:bold; letter-spacing:1.5px; font-size:.95em; margin-bottom:14px; }
+.s-zg-bilgi .zg-slayt-ust{ color:#2a6f97; }
+.s-zg-merak .zg-slayt-ust{ color:#7c3aed; }
+.s-zg-soru .zg-slayt-ust{ color:#c9740b; }
+.s-zg-hayat .zg-slayt-ust{ color:#40916c; }
+.zg-slayt-metin{ font-size:1.15em; line-height:1.55; max-width:640px; }
+
 </style>
 </head>
 <body>
@@ -701,6 +728,11 @@
       <li>Şükür, sadece dille söylenen bir söz değil; nimeti yerinde kullanmak ve başkalarıyla paylaşmaktır da.</li><li>🤝 Selam — "Selamünaleyküm" / "Ve aleykümselam" Anlamı: "Allah'ın selameti/esenliği senin üzerine olsun." Müslümanların karşılaştıklarında birbirlerine söylediği, sevgi ve barış dileyen bir ifadedir.</li><li>Peygamberimiz selamı yaymayı, insanlar arasında sevgiyi artıran bir davranış olarak tavsiye etmiştir.</li><li>🕌 Tekbir — "Allahu Ekber" Anlamı: "Allah en büyüktür." Allah'ın büyüklüğünü, üstünlüğünü anmak için söylenir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-bilgi" data-tip="zg">
+    <p class="zg-slayt-ust">💡 BİLGİ KUTUSU</p>
+    <p class="zg-slayt-metin">"Bismillah" ifadesi Kur'an-ı Kerim'de 113 surenin başında yer alır (Tevbe suresi hariç). Bu, güzel bir işe başlarken Allah'ın adını anmanın önemini gösterir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--yesil)">
     <h3>📌 Günlük Konuşmalarda Dinî İfadeler (4/5)</h3>
@@ -715,6 +747,11 @@
       <li>İstiğfar etmek, hatalarımızdan ders çıkarıp kendimizi düzeltmeye çalışmamız gerektiğini hatırlatır.</li><li>✨ Tesbih — "Sübhanallah" Anlamı: "Allah'ı bütün eksikliklerden uzak tutarım." Allah'ın hiçbir kusuru olamayacağını, O'nun yüceliğini dile getirmek için; genellikle hayranlık uyandıran güzellikler karşısında da söylenir.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-merak" data-tip="zg">
+    <p class="zg-slayt-ust">🤔 MERAK ETTİN Mİ?</p>
+    <p class="zg-slayt-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir ve toplumda iyi dilek kültürünü güçlendirir.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--mavi)">
     <h3>📌 Dilek ve Dualarda Geçen Dinî İfadeler</h3>
@@ -736,6 +773,11 @@
       <li>Neden önemlidir? Sübhâneke duasıyla namaza, Allah'ı övüp yücelterek ve O'ndan başka ilah olmadığını hatırlayarak başlarız.</li><li>Bu dua, kalbimizi ibadete hazırlar ve Allah'a olan bağlılığımızı tazeler.</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-soru" data-tip="zg">
+    <p class="zg-slayt-ust">❓ GÜNÜN SORUSU</p>
+    <p class="zg-slayt-metin">Bugün kaç kez "İnşallah" veya "Elhamdülillah" dedin? Bu ifadeleri kullanırken ne hissettin?</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:var(--turkuaz)">
     <h3>✅ Öğrendiklerimizi Değerlendiriyoruz</h3>
@@ -750,6 +792,11 @@
       <li>Dinî ifadeleri daha iyi anlayabilmek için bilmemiz gereken temel kavramlar, konularına göre gruplandırılmıştır:</li><li>Allah ve Peygamberimizle İlgili Kavramlar</li><li>Allah'ın Bize Verdikleri</li>
     </ul>
   </div>
+  <div class="sunum-slayt s-zg s-zg-hayat" data-tip="zg">
+    <p class="zg-slayt-ust">🌍 GERÇEK HAYAT BAĞLANTISI</p>
+    <p class="zg-slayt-metin">Sabah kalkarken, yemeğe başlarken, bir haber alırken kullandığımız dinî ifadeler, günlük hayatımızı Allah'ı hatırlayarak yaşamamızı sağlar.</p>
+  </div>
+
 
   <div class="sunum-slayt s-icerik" data-tip="icerik" style="--vurgu:#7c3aed">
     <h3>📖 Genişletilmiş Kavramlar Sözlüğü (2/3)</h3>
@@ -805,7 +852,6 @@
       <li>Dinî ifadeler nedir? İnsanlar, düşüncelerini ve duygularını dille ifade eder.</li><li>Dilimizde, dinimizin etkisiyle ortaya çıkmış ve günlük konuşmalarımıza yerleşmiş birçok söz ve kavram vardır.</li><li>İşte bunlara dinî ifadeler denir.</li><li>Sevincimizi, üzüntümüzü, şükranımızı, dileğimizi ya da bir hatamızı fark ettiğimizde bu ifadeleri kullanırız.</li><li>Bu ifadeleri yerinde ve bilinçli kullanmak; Allah'ı, Peygamberimizi ve dinimizin öğütlediği güzel ahlakı hatırlamamızı sağlar.</li>
     </ul>
   </div>
-
   <div class="sunum-slayt s-kapanis" data-tip="kapanis">
     <div class="sb-daire">🌟</div>
     <h2 class="sb-baslik">Dinlediğiniz İçin Teşekkürler</h2>
@@ -877,6 +923,11 @@
     </ul>
     <div class="aciklama"><b>Unutmayalım:</b> Bu ifadeleri kullanırken sadece bir söz söylemiş olmuyoruz; aynı zamanda karşımızdaki kişi için içtenlikle dua etmiş oluyoruz. Bu yüzden bu sözleri gönülden söylemeliyiz.</div>
   </div>
+  <div class="zg-kutu zg-bilgi">
+    <p class="zg-baslik">💡 Bilgi Kutusu</p>
+    <p class="zg-metin">"Bismillah" ifadesi Kur'an-ı Kerim'de 113 surenin başında yer alır (Tevbe suresi hariç). Bu, güzel bir işe başlarken Allah'ın adını anmanın önemini gösterir.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">3️⃣ Bir Dua Tanıyorum: Sübhâneke Duası ve Anlamı</h3>
@@ -892,6 +943,11 @@
     <p><b>Ne zaman okunur?</b> Sübhâneke duası, namaza durup iftitah (başlangıç) tekbiri aldıktan hemen sonra, Kur'an okumaya başlamadan önce okunur. Bu yüzden bu duaya "namazın anahtarı" da denilebilir.</p>
     <p><b>Neden önemlidir?</b> Sübhâneke duasıyla namaza, Allah'ı övüp yücelterek ve O'ndan başka ilah olmadığını hatırlayarak başlarız. Bu dua, kalbimizi ibadete hazırlar ve Allah'a olan bağlılığımızı tazeler.</p>
   </div>
+  <div class="zg-kutu zg-merak">
+    <p class="zg-baslik">🤔 Merak Ettin mi?</p>
+    <p class="zg-metin">Neden hapşırınca "Elhamdülillah" deriz de yanımızdakiler "Yerhamükallah" der? Bu karşılıklı dua geleneği Peygamberimizin sünnetinden gelir ve toplumda iyi dilek kültürünü güçlendirir.</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">✅ Öğrendiklerimizi Değerlendiriyoruz</h3>
@@ -903,6 +959,11 @@
     </ul>
     <p>Bu kazanımlar, sayfadaki "✅ Değerlendirme" ve "📝 Araştırma Oyunları" bölümlerindeki zamanlı testlerle (can hakkı ve puanlama ile) ölçülür.</p>
   </div>
+  <div class="zg-kutu zg-soru">
+    <p class="zg-baslik">❓ Günün Sorusu</p>
+    <p class="zg-metin">Bugün kaç kez "İnşallah" veya "Elhamdülillah" dedin? Bu ifadeleri kullanırken ne hissettin?</p>
+  </div>
+
 
   <div class="kutu-panel">
     <h3 style="color:var(--mavi)">📖 Genişletilmiş Kavramlar Sözlüğü</h3>
@@ -954,6 +1015,11 @@
       <li><b>Bayram</b> — Dinimizde sevinç ve kardeşlik duygularıyla kutlanan özel günler (Ramazan ve Kurban Bayramı gibi).</li>
     </ul>
   </div>
+  <div class="zg-kutu zg-hayat">
+    <p class="zg-baslik">🌍 Gerçek Hayat Bağlantısı</p>
+    <p class="zg-metin">Sabah kalkarken, yemeğe başlarken, bir haber alırken kullandığımız dinî ifadeler, günlük hayatımızı Allah'ı hatırlayarak yaşamamızı sağlar.</p>
+  </div>
+
 </section>
 
 <!-- KONU TEKRARI TESTİ -->
