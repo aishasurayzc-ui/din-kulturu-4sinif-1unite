@@ -662,6 +662,9 @@
 .s-zb-derin{ background:#e6f7f9; }
 .s-zb-derin .zb-slayt-ust{ color:#0891b2; }
 
+
+.oyun-amaci{ background:#fff3cd; border-left:5px solid #f4a261; padding:8px 14px; margin:10px 0 14px; border-radius:6px; font-weight:bold; font-size:.92em; color:#7a4a00; }
+
 </style>
 </head>
 <body>
@@ -1200,6 +1203,7 @@
 <!-- KONU TEKRARI TESTİ -->
 <section id="konutekrari">
   <h2>📝 Konu Tekrarı Testi (50 Soru)</h2>
+  <div class="oyun-amaci">🎯 Bu bölümün amacı: Ünitenin tamamını kapsamlı bir testle tekrar edip pekiştirmek.</div>
   <div class="aciklama">4 şıklı, 50 sorudan oluşan kapsamlı bir tekrar testi! Kolay, orta ve zor sorular karışık geliyor. Cevabı seçince doğru/yanlış hemen görünüyor, altında da açıklaması çıkıyor.</div>
   <div class="oyun-bilgi">
     <span>🗂️ Soru: <b id="ktrTur">1</b>/<b id="ktrToplam">50</b></span>
@@ -1400,6 +1404,7 @@
 <!-- DEĞERLENDİRME: ZAMANLI TEST (CAN + PUAN) -->
 <section id="degerlendirme">
   <h2>✅ Öğrendiklerimizi Değerlendiriyoruz</h2>
+  <div class="oyun-amaci">🎯 Bu bölümün amacı: Üniteyi ne kadar öğrendiğini hızlı bir testle ölçmek.</div>
   <div class="aciklama">⏱️ Her soru için sınırlı sürenüz var, 3 canınız var — dikkatli ve hızlı ol!</div>
   <div class="oyun-bilgi">
     <span id="degCan">❤️❤️❤️</span>
@@ -1413,6 +1418,7 @@
 <!-- ARAŞTIRMA OYUNLARI -->
 <section id="arastirma">
   <h2>📝 Araştırma Oyunlarım (Aile Büyükleriyle Birlikte)</h2>
+  <div class="oyun-amaci">🎯 Bu bölümün amacı: Öğrendiklerini araştırma temelli etkinliklerle derinleştirmek.</div>
   <div class="aciklama">Önce her başlıktaki görevi aile büyüklerinle konuşarak araştır ve defterine yaz, sonra öğrendiklerini pekiştirmek için oyunu oyna!</div>
 
   <div class="kutu-panel">
@@ -1519,6 +1525,7 @@
 <!-- BONUS OYUN: HAFIZA ZİNCİRİ (SIMON) -->
 <section id="bonus">
   <h2>🎮 Bonus Oyun: Dinî İfadeler Hafıza Zinciri</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Ünite bilgilerini eğlenceli bir ek etkinlikle tekrar etmek.</div>
   <div class="aciklama">Yanan ifadeleri sırasıyla izle, sonra aynı sırayla tıkla! Her turda zincir bir ifade daha uzuyor. Kaç ifadeye kadar hatırlayabileceksin?</div>
   <div class="oyun-bilgi"><span>🏆 Seviye: <b id="bzSeviye">0</b></span></div>
   <div class="bz-izgara" id="bzIzgara"></div>
@@ -1532,6 +1539,7 @@
 <!-- KELİME AVI BULMACASI -->
 <section id="kelimeavi">
   <h2>🔎 Kelime Avı Bulmacası</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Ünitedeki temel kavramları harf tablosunda bularak tanımayı pekiştirmek.</div>
   <div class="aciklama">Ünitede geçen kavramları harf tablosunda bul! Bir harfe tıkla, sonra kelimenin son harfine tıkla (yatay ya da dikey, düz veya ters yönde olabilir).</div>
   <div class="oyun-bilgi"><span>✅ Bulunan: <b id="kaBulunan">0</b>/<b id="kaToplam">10</b></span></div>
   <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
@@ -1545,6 +1553,7 @@
 <!-- ÇENGEL BULMACA -->
 <section id="cengel">
   <h2>🧩 Çengel Bulmaca</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Verilen tanımlardan yola çıkarak doğru kavramı hatırlayıp yazabilmek.</div>
   <div class="aciklama">Kelimeler zincir gibi birbirine bağlı: her kelimenin son harfi, bir sonraki kelimenin ilk harfidir! İpuçlarına bakarak kutucukları doldur — bir harf yazınca otomatik olarak bir sonraki kutucuğa geçersin.</div>
   <div class="cengel-izgara" id="cengelIzgara"></div>
   <ul class="cengel-liste" id="cengelListe"></ul>
@@ -1558,6 +1567,7 @@
 <!-- SÖZCÜK MERDİVENİ -->
 <section id="merdiven">
   <h2>🪜 Sözcük Merdiveni</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Kavramları ipuçlarından yararlanarak hızlıca çözebileceksin.</div>
   <div class="aciklama">Merdivenin ilk basamağında bir kelime var. Her yeni basamak, bir öncekinin SON harfiyle başlamalı! İpucuna göre doğru kelimeyi seç ve merdiveni tırman.</div>
   <div class="oyun-bilgi"><span>🪜 Basamak: <b id="merdivenBasamak">1</b>/<b id="merdivenToplam">6</b></span></div>
   <div id="merdivenIpucu" class="balon-durum"></div>
@@ -1570,6 +1580,7 @@
 <!-- ŞİFRELİ SÖZCÜK OYUNU -->
 <section id="sifre">
   <h2>🔐 Şifreli Sözcük Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Harf-sayı eşleşmesi yaparak kavramları şifre çözer gibi bulabilmek.</div>
   <div class="aciklama">Her harfin bir sayı karşılığı var! Aşağıdaki anahtar tablosuna bakarak sayılardan kelimeleri çöz ve kutucuklara yaz.</div>
   <div class="sifre-anahtar" id="sifreAnahtar"></div>
   <div id="sifreKelimeler"></div>
@@ -1583,6 +1594,7 @@
 <!-- LABİRENT OYUNU -->
 <section id="labirent">
   <h2>🌀 Labirent Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Doğru kavramları takip ederek labirentte hedefe ulaşmak.</div>
   <div class="aciklama">🚶 karakterini oklarla (klavye ok tuşları veya aşağıdaki düğmeler) yönlendirerek 🕌'ye ulaştır! Yolda parıldayan yıldızlara basarsan dinî bir ifade toplarsın.</div>
   <div class="oyun-bilgi">
     <span>🔁 Hamle: <b id="labirentHamle">0</b></span>
@@ -1606,6 +1618,7 @@
 <!-- NONOGRAM -->
 <section id="nonogram">
   <h2>🖼️ Nonogram: Gizli Resmi Bul</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Dikkat ve mantık yürüterek gizli bir görseli/kavramı ortaya çıkarmak.</div>
   <div class="aciklama">Satır ve sütunlardaki sayılar, o satır/sütunda arka arkaya kaç kutunun boyanacağını gösterir. Doğru kutuları tıklayarak ünite ile ilgili gizli resmi ortaya çıkar!</div>
   <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:6px;">
     <button class="eylem" onclick="nonogramSec('camii')">🕌 Cami (İbadet Yeri)</button>
@@ -1624,6 +1637,7 @@
 <!-- HIZLI KELİME ÜRETME OYUNU -->
 <section id="kelimeuret">
   <h2>⚡ Hızlı Kelime Üretme Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Ünitede geçen kavramları hızlıca hatırlayıp üretebileceksin.</div>
   <div class="aciklama">Belirlenen harfle başlayan, ünitede geçen dinî ifade/kavramları süre bitmeden art arda yaz! Her doğru ve farklı kelime bir puan kazandırır.</div>
   <div class="oyun-bilgi">
     <span>🔤 Harf: <b id="kuHarf">-</b></span>
@@ -1641,6 +1655,7 @@
 <!-- KELİME FABRİKASI -->
 <section id="fabrika">
   <h2>🏭 Kelime Fabrikası</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Harflerden doğru kavramı üreterek kelime dağarcığını genişletmek.</div>
   <div class="aciklama">Üretim bandındaki karışık harfleri kullanarak siparişteki ipucuna uyan kelimeyi üret! Doğru yazıp "Üret!"e bas (ya da Enter'a bas). Kelime havuzu çok geniş, fabrika kapanana kadar üretmeye devam et!</div>
   <div class="oyun-bilgi">
     <span>🏭 Üretilen: <b id="kfUretilen">0</b>/<b id="kfToplam">36</b></span>
@@ -1658,6 +1673,7 @@
 <!-- KELİME MÜHENDİSİ -->
 <section id="muhendis">
   <h2>🛠️ Kelime Mühendisi</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Kavramları parçalarından birleştirerek doğru şekilde kurabileceksin.</div>
   <div class="aciklama">Her kelime küçük parçalara ayrıldı. Plana (anlama) bakarak parçaları doğru sırada tıkla ve kelimeyi inşa et!</div>
   <div class="oyun-bilgi">
     <span>🏗️ Tur: <b id="kmTur">1</b>/<b id="kmToplam">37</b></span>
@@ -1673,6 +1689,7 @@
 <!-- TUZAK HARF OYUNU -->
 <section id="tuzak">
   <h2>🚫 Tuzak Harf Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Doğru kavramı yanıltıcı (tuzak) seçenekler arasından ayırt edebilmek.</div>
   <div class="aciklama">Bir "tuzak harf" belirlenecek. O harfi İÇERMEYEN, ünitede geçen dinî ifade/kavramları süre bitmeden art arda yaz! Tuzak harfi olan bir kelime yazarsan sayılmaz.</div>
   <div class="oyun-bilgi">
     <span>🚫 Tuzak Harf: <b id="tuzakHarf">-</b></span>
@@ -1689,6 +1706,7 @@
 <!-- KELİME DEDEKTİFİ -->
 <section id="dedektif">
   <h2>🕵️ Kelime Dedektifi</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: İpuçlarından yola çıkarak doğru kavramı mantık yürüterek bulmak.</div>
   <div class="aciklama">Gizli kelimeyi (bir dinî ifade/kavram) 6 denemede bul! Her tahminden sonra harfler renklenir: 🟩 doğru yerde, 🟨 kelimede var ama yanlış yerde, ⬜ kelimede yok.</div>
   <div class="oyun-bilgi">
     <span>🗂️ Vaka: <b id="ddVaka">1</b>/<b id="ddToplamVaka">27</b></span>
@@ -1706,6 +1724,7 @@
 <!-- ŞİFRELİ TANIM OYUNU -->
 <section id="sifretanim">
   <h2>🔐 Şifreli Tanım Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Bir tanımın hangi kavrama ait olduğunu şifre çözerek bulabilmek.</div>
   <div class="aciklama">Tanımın bazı harfleri sayı/sembole dönüştürülerek "şifrelendi" (A=4, E=3, İ/I=1, O=0). Şifreyi çöz, anlamı doğru kelimeyle eşleştir!</div>
   <div class="oyun-bilgi">
     <span>🗂️ Tur: <b id="stTur">1</b>/<b id="stToplam">37</b></span>
@@ -1720,6 +1739,7 @@
 <!-- MANTIK ZİNCİRİ OYUNU -->
 <section id="mantikzinciri">
   <h2>🔗 Mantık Zinciri Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Kavramlar arasındaki mantıksal bağlantıları kurabilmek.</div>
   <div class="aciklama">Bir kavramın tanımını ve mantık sorusunu oku, zincirde bir sonraki kavramı doğru seçerek zinciri tamamla!</div>
   <div class="oyun-bilgi"><span>🔗 Halka: <b id="mzHalka">1</b>/<b id="mzToplam">7</b></span></div>
   <div id="mzSoru" class="balon-durum"></div>
@@ -1732,6 +1752,7 @@
 <!-- KELİME SATRANCI -->
 <section id="satranc">
   <h2>♞ Kelime Satrancı</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Kavramları tahta üzerinde stratejik biçimde bulup eşleştirebilmek.</div>
   <div class="aciklama">Satranç tahtasında <b>at (♞) hamlesiyle</b> (L şeklinde) birbirine bağlı harfleri sırayla tıklayarak kelimeleri bul! İlk harfe tıkla, sonra geçerli bir at hamlesiyle ulaşılabilen bir sonraki harfe tıkla. Yanlış hamle seçimini sıfırlar.</div>
   <div class="oyun-bilgi"><span>✅ Bulunan: <b id="ksBulunan">0</b>/<b id="ksToplam">8</b></span></div>
   <div style="display:flex; gap:24px; flex-wrap:wrap; justify-content:center; align-items:flex-start;">
@@ -1748,6 +1769,7 @@
 <!-- DİL DEDEKTİFİ -->
 <section id="dildedektifi">
   <h2>🕵️‍♀️ Dil Dedektifi</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Cümle içinde doğru/yanlış kullanılan kavramları ayırt edebileceksin.</div>
   <div class="aciklama">Aşağıdaki 4 cümleden hangisinde dinî ifade doğru yerde/durumda kullanılmış? Doğru cümleyi bul!</div>
   <div class="oyun-bilgi">
     <span>🗂️ Tur: <b id="ddlTur">1</b>/<b id="ddlToplam">10</b></span>
@@ -1762,6 +1784,7 @@
 <!-- KELİME KODLAMA OYUNU -->
 <section id="kelimekodlama">
   <h2>💻 Kelime Kodlama Oyunu</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Kavramları kod çözme mantığıyla tanıyabileceksin.</div>
   <div class="aciklama">Her harfin alfabedeki sırasına göre sabit bir 5 bitlik ikili (binary) kodu var! Kod tablosuna bakarak aşağıdaki ikili kodu çöz, ipucuna da bakarak doğru kelimeyi seç.</div>
   <div class="sifre-anahtar" id="kkAnahtar"></div>
   <div class="oyun-bilgi">
@@ -1778,6 +1801,7 @@
 <!-- SEMANTİK LABİRENT -->
 <section id="semantiklabirent">
   <h2>🧠 Semantik Labirent</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Kavram ilişkilerini takip ederek doğru yolu bulabilmek.</div>
   <div class="aciklama">Her odada bir kategori var. 4 kelimeden kategoriye AİT OLMAYANI (yabancı olanı) bulup kapıyı aç, bir sonraki odaya geç! Yanlış seçersen can kaybedersin, canların biterse baştan başlarsın.</div>
   <div class="oyun-bilgi">
     <span>🚪 Oda: <b id="szOda">1</b>/<b id="szToplamOda">6</b></span>
@@ -1792,6 +1816,7 @@
 <!-- ÇELİŞKİ AVI -->
 <section id="celiskiavi">
   <h2>🕵️‍♂️ Çelişki Avı</h2>
+  <div class="oyun-amaci">🎯 Bu oyun sonunda: Doğru bilgiyle çelişen ifadeleri fark edebileceksin.</div>
   <div class="aciklama">Aşağıdaki cümlede bir kelimeye iki anlam yükleniyor. Bu iki anlam birbiriyle ÇELİŞİYOR mu, yoksa ikisi de doğru ve uyumlu mu? Doğru düğmeye bas!</div>
   <div class="oyun-bilgi">
     <span>🗂️ Tur: <b id="caTur">1</b>/<b id="caToplam">12</b></span>
@@ -1810,6 +1835,7 @@
 <!-- KAVRAM TURNUVASI -->
 <section id="kavramturnuvasi">
   <h2>🏆 Kavram Turnuvası</h2>
+  <div class="oyun-amaci">🎯 Bu oyunun amacı: Öğrenilen kavramları hızlı ve rekabetçi bir ortamda pekiştirmek.</div>
   <div class="aciklama">8 kavram tek eleme usulü yarışıyor! Her maçta hangi kavramın soruya doğru cevap olduğuna hakemlik yap. Kavramlar birbirine çok yakın anlamlı olduğu için dikkatli ol, bu turnuva ZOR!</div>
   <div class="oyun-bilgi">
     <span>🥊 Maç: <b id="ktTur">1</b>/<b id="ktToplam">7</b></span>
